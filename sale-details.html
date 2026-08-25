@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-    <title>Sale Details</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sale Details - SaleFinder</title>
 
     <link rel="stylesheet"
           href="sale-details.css">
@@ -12,7 +17,93 @@
 
 <body>
 
-<main id="sale"></main>
+<header>
+
+    <div class="logo">
+        Sale<span>Finder</span>
+    </div>
+
+    <a href="index.html">← Back to Home</a>
+
+</header>
+
+
+<main>
+
+    <div class="sale-container">
+
+        <div class="sale-image">
+            🛍️
+        </div>
+
+        <div class="sale-content">
+
+            <span class="discount">
+                50% OFF
+            </span>
+
+            <h1>
+                Mega Fashion Sale
+            </h1>
+
+            <h2>
+                Trendy Fashion Store
+            </h2>
+
+            <p class="location">
+                📍 Main Market, Shegaon
+            </p>
+
+            <p class="description">
+
+                Get amazing discounts on men's,
+                women's and kids' fashion.
+
+                Limited time offer. Visit the store
+                and grab your favourite products
+                before the sale ends!
+
+            </p>
+
+
+            <div class="details">
+
+                <div>
+                    <strong>📅 Sale Starts</strong>
+                    <p>25 August 2026</p>
+                </div>
+
+                <div>
+                    <strong>⏰ Sale Ends</strong>
+                    <p>31 August 2026</p>
+                </div>
+
+                <div>
+                    <strong>🏷️ Category</strong>
+                    <p>Fashion</p>
+                </div>
+
+            </div>
+
+
+            <button onclick="showMessage()">
+                Get Directions
+            </button>
+
+            <button
+                    class="save"
+                    onclick="saveSale()">
+
+                ❤️ Save Sale
+
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
 
 <script src="sale-details.js"></script>
 
