@@ -1,56 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sale Details - SaleFinder</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="sale-details.css">
+
+    <title>Sale Details</title>
+
+    <link rel="stylesheet"
+          href="sale-details.css">
+
 </head>
+
 <body>
 
-<!-- Ambient Mesh Glow Background -->
-<div class="background-decorations">
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <div class="glow glow-3"></div>
-</div>
-
-<!-- Top Navigation Bar -->
-<header class="navbar">
-    <div class="nav-container">
-        <a href="login.html" class="nav-back-btn" title="Back">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Back</span>
-        </a>
-        <div class="nav-brand">
-            <div class="brand-logo">
-                <i class="fa-solid fa-tags"></i>
-            </div>
-            <span class="brand-name">Sale<span>Finder</span></span>
-        </div>
-        <div class="nav-actions">
-            <button class="nav-icon-btn" id="btn-bookmark" onclick="toggleBookmark()" title="Save Sale">
-                <i class="fa-regular fa-heart" id="bookmark-icon"></i>
-            </button>
-            <button class="nav-icon-btn" onclick="shareSale()" title="Share Deal">
-                <i class="fa-solid fa-share-nodes"></i>
-            </button>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content Container populated by JS -->
 <main id="sale"></main>
 
-<!-- Toast Notification Container -->
-<div id="toast-container" class="toast-container"></div>
-
 <script src="sale-details.js"></script>
+
 </body>
+
 </html>
