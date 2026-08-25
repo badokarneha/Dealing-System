@@ -1,0 +1,35 @@
+body {
+    background: #f5f6fa;
+    font-family: Arial;
+}
+
+.form-box {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: 0;
+    border-radius: 10px;
+    background: #6c4df6;
+    color: white;
+}
