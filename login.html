@@ -1,119 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaleFinder - Authentication</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="login.css">
+
+    <title>Login</title>
+
+    <link rel="stylesheet"
+          href="login.css">
+
 </head>
+
 <body>
 
-    <div class="background-decorations">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="glow glow-3"></div>
-    </div>
+<div class="box">
 
-    <div class="container">
-        <div class="box">
-            <!-- Brand Header -->
-            <div class="brand">
-                <div class="logo-badge">
-                    <i class="fa-solid fa-tags"></i>
-                </div>
-                <h1>Sale<span>Finder</span></h1>
-                <p class="tagline">Discover the best local sales & exclusive deals</p>
-            </div>
+    <h1>SaleFinder</h1>
 
-            <!-- Form Mode Switcher Tabs -->
-            <div class="auth-tabs">
-                <button type="button" class="tab-btn active" id="tab-register" onclick="switchMode('register')">
-                    <i class="fa-solid fa-user-plus"></i> Register
-                </button>
-                <button type="button" class="tab-btn" id="tab-login" onclick="switchMode('login')">
-                    <i class="fa-solid fa-right-to-bracket"></i> Login
-                </button>
-            </div>
+    <input id="name"
+           placeholder="Name">
 
-            <!-- Input Form -->
-            <form id="auth-form" onsubmit="event.preventDefault();">
-                <!-- Name Field (Visible for Register) -->
-                <div class="input-group" id="name-group">
-                    <label for="name">Full Name</label>
-                    <div class="input-wrapper">
-                        <i class="fa-regular fa-user field-icon"></i>
-                        <input id="name" placeholder="John Doe" autocomplete="name">
-                    </div>
-                </div>
+    <input id="email"
+           type="email"
+           placeholder="Email">
 
-                <!-- Email Field -->
-                <div class="input-group" id="email-group">
-                    <label for="email">Email Address</label>
-                    <div class="input-wrapper">
-                        <i class="fa-regular fa-envelope field-icon"></i>
-                        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
-                    </div>
-                </div>
+    <input id="password"
+           type="password"
+           placeholder="Password">
 
-                <!-- Password Field -->
-                <div class="input-group" id="password-group">
-                    <label for="password">Password</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-lock field-icon"></i>
-                        <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" required>
-                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility()" aria-label="Toggle password visibility">
-                            <i class="fa-regular fa-eye" id="password-eye-icon"></i>
-                        </button>
-                    </div>
-                </div>
+    <select id="role">
 
-                <!-- Role Selector (Visible for Register) -->
-                <div class="input-group" id="role-group">
-                    <label for="role">Select Account Role</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-id-badge field-icon"></i>
-                        <select id="role">
-                            <option value="customer">Customer (Find Deals & Offers)</option>
-                            <option value="shopkeeper">Shopkeeper (Post & Manage Sales)</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down select-chevron"></i>
-                    </div>
-                </div>
+        <option value="customer">
+            Customer
+        </option>
 
-                <!-- Action Buttons Container -->
-                <div class="actions">
-                    <button type="button" class="btn btn-primary" id="btn-create-account" onclick="register()">
-                        <i class="fa-solid fa-sparkles"></i> Create Account
-                    </button>
+        <option value="shopkeeper">
+            Shopkeeper
+        </option>
 
-                    <div class="divider" id="or-divider">
-                        <span>or sign in if already registered</span>
-                    </div>
+    </select>
 
-                    <button type="button" class="btn btn-secondary" id="btn-login-action" onclick="login()">
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
-                    </button>
-                </div>
-            </form>
+    <button onclick="register()">
+        Create Account
+    </button>
 
-            <!-- Card Footer -->
-            <div class="footer-note">
-                <p id="footer-text">
-                    By signing up, you agree to our <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a>.
-                </p>
-            </div>
-        </div>
-    </div>
+    <hr>
 
-    <!-- Toast Notification Container -->
-    <div id="toast-container" class="toast-container"></div>
+    <button onclick="login()">
+        Login
+    </button>
 
-    <script src="login.js"></script>
+</div>
+
+<script src="login.js"></script>
+
 </body>
 </html>
