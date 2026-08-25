@@ -1,14 +1,19 @@
 body {
-    background: #f5f6fa;
-    font-family: Arial;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #c2e9fb);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
 .form-box {
     max-width: 600px;
     margin: 50px auto;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(80, 70, 150, 0.2);
+    border: 2px solid #ffffff;
 }
 
 input,
@@ -16,12 +21,26 @@ textarea {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #e0d7ff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #faf9ff;
+    color: #333;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8e6cff;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(142, 108, 255, 0.25);
 }
 
 textarea {
     height: 120px;
+    resize: vertical;
 }
 
 button {
@@ -29,7 +48,21 @@ button {
     padding: 15px;
     margin-top: 15px;
     border: 0;
-    border-radius: 10px;
-    background: #6c4df6;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6c4df6, #a855f7, #ec4899);
     color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 18px rgba(108, 77, 246, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(108, 77, 246, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
 }
