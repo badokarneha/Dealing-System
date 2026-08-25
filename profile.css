@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background: #f5f6fb;
+    font-family: Arial;
+}
+
+.profile {
+    width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 50px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.avatar {
+    font-size: 70px;
+}
+
+.role {
+    margin: 20px;
+    color: #6c4df6;
+    font-weight: bold;
+}
+
+button {
+    padding: 14px 30px;
+    border: 0;
+    border-radius: 10px;
+    background: #6c4df6;
+    color: white;
+}
