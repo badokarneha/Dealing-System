@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background: #f6f7fb;
+    font-family: Arial;
+}
+
+header {
+    padding: 20px 8%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+    color: #6c4df6;
+}
+
+main {
+    padding: 60px 8%;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.card .discount {
+    color: #6c4df6;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #6c4df6;
+    color: white;
+}
