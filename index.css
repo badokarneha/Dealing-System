@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f7f8fc;
+    color: #171717;
+}
+
+header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #6c4df6;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+}
+
+.login {
+    text-decoration: none;
+    background: #6c4df6;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 10px;
+}
+
+.hero {
+    min-height: 520px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    color: #6c4df6;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 65px;
+    line-height: 1;
+    margin: 20px 0;
+}
+
+h1 span {
+    color: #6c4df6;
+}
+
+.hero-text > p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary,
+.secondary {
+    padding: 14px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.primary {
+    background: #6c4df6;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #ddd;
+    color: #333;
+    background: white;
+}
+
+.hero-card {
+    width: 330px;
+    height: 360px;
+    background: linear-gradient(145deg, #7a5cff, #4024bd);
+    color: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 30px 70px #6c4df655;
+}
+
+.sale-badge {
+    background: white;
+    color: #6c4df6;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.hero-card h2 {
+    margin-top: 80px;
+    font-size: 35px;
+}
+
+.offer {
+    margin-top: 30px;
+}
+
+.section {
+    padding: 60px 8%;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+}
+
+.sales-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.sale-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #00000008;
+}
+
+.discount {
+    color: #6c4df6;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.sale-card h3 {
+    margin: 12px 0;
+}
+
+.sale-card p {
+    color: #777;
+}
+
+.sale-card button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    background: #6c4df6;
+    color: white;
+    border-radius: 8px;
+}
+
+@media(max-width:800px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .sales-grid {
+        grid-template-columns: 1fr;
+    }
+}
