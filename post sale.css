@@ -1,35 +1,767 @@
-body {
-    background: #f5f6fa;
-    font-family: Arial;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
+   SALEFINDER - POST SALE
+   Dark Purple + 3D Animated Theme
+   ===================================================== */
+
+:root {
+    --bg: #080811;
+    --bg2: #100d22;
+
+    --purple: #6c4df6;
+    --purple-light: #9b7cff;
+    --purple-dark: #351d9b;
+    --pink: #d946ef;
+
+    --white: #ffffff;
+    --white-soft: rgba(255, 255, 255, 0.82);
+
+    --input-bg: rgba(255, 255, 255, 0.045);
+    --border: rgba(255, 255, 255, 0.10);
 }
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Inter', Arial, sans-serif;
+
+    color: var(--white);
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(108, 77, 246, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(217, 70, 239, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #080811,
+            #0c0a18,
+            #080811
+        );
+}
+
+
+/* =====================================================
+   ANIMATED BACKGROUND
+   ===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+    height: 420px;
+
+    top: -180px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(108, 77, 246, 0.35),
+            rgba(108, 77, 246, 0.08) 45%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    animation: orbLeft 9s ease-in-out infinite;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    right: -150px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(217, 70, 239, 0.22),
+            rgba(108, 77, 246, 0.08) 45%,
+            transparent 72%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    animation: orbRight 11s ease-in-out infinite;
+}
+
+
+@keyframes orbLeft {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(100px, 80px, 0) scale(1.15);
+    }
+}
+
+
+@keyframes orbRight {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(-100px, -80px, 0) scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   CENTER PAGE
+   ===================================================== */
 
 .form-box {
-    max-width: 600px;
-    margin: 50px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
+    width: min(700px, 92%);
+
+    margin: 60px auto;
+
+    padding: 42px 48px 48px;
+
+    position: relative;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(26, 23, 48, 0.94),
+            rgba(10, 10, 21, 0.94)
+        );
+
+    border:
+        1px solid rgba(151, 125, 255, 0.20);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.65),
+        0 0 60px rgba(108, 77, 246, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(22px);
+
+    transform-style: preserve-3d;
+
+    animation:
+        cardEnter 0.9s ease forwards;
 }
+
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+
+        transform:
+            perspective(1000px)
+            rotateX(8deg)
+            translateY(35px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            perspective(1000px)
+            rotateX(0)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   GLOWING TOP LINE
+   ===================================================== */
+
+.form-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--purple),
+            var(--pink),
+            var(--purple-light),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px var(--purple),
+        0 0 30px var(--pink);
+
+    animation:
+        topGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes topGlow {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   3D FLOATING SHAPES
+   ===================================================== */
+
+.form-box::after {
+    content: "";
+
+    position: fixed;
+
+    width: 42px;
+    height: 42px;
+
+    right: 8%;
+
+    top: 28%;
+
+    border:
+        1px solid rgba(155, 124, 255, 0.55);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108, 77, 246, 0.35),
+            rgba(217, 70, 239, 0.08)
+        );
+
+    box-shadow:
+        0 0 25px rgba(108, 77, 246, 0.35);
+
+    transform-style: preserve-3d;
+
+    animation:
+        cubeFloat 7s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes cubeFloat {
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0)
+            rotateX(0deg)
+            rotateY(0deg)
+            rotateZ(0deg);
+    }
+
+    50% {
+        transform:
+            translate3d(-35px, -50px, 80px)
+            rotateX(180deg)
+            rotateY(220deg)
+            rotateZ(90deg);
+    }
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.form-box h1 {
+    color: #ffffff;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 0 25px rgba(139, 108, 255, 0.25);
+
+    animation:
+        titleGlow 3s ease-in-out infinite;
+}
+
+
+.form-box h1::after {
+    content: "Share your latest offer with customers";
+
+    display: block;
+
+    margin-top: 9px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+    text-shadow: none;
+}
+
+
+@keyframes titleGlow {
+    0%,
+    100% {
+        text-shadow:
+            0 0 10px rgba(139, 108, 255, 0.15);
+    }
+
+    50% {
+        text-shadow:
+            0 0 25px rgba(139, 108, 255, 0.40);
+    }
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+#saleForm {
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
 
 input,
-textarea {
+textarea,
+select {
     width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+
+    padding: 16px 18px;
+
+    color: #ffffff;
+
+    background:
+        var(--input-bg);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
 }
 
-textarea {
-    height: 120px;
+
+input::placeholder,
+textarea::placeholder {
+    color:
+        rgba(255, 255, 255, 0.72);
 }
+
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color:
+        rgba(155, 124, 255, 0.38);
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    color: #ffffff;
+
+    background:
+        rgba(108, 77, 246, 0.08);
+
+    border-color:
+        var(--purple-light);
+
+    box-shadow:
+        0 0 0 3px rgba(108, 77, 246, 0.10),
+        0 0 25px rgba(108, 77, 246, 0.18);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   DATE FIELDS
+   ===================================================== */
+
+input[type="date"] {
+    color: #ffffff;
+
+    color-scheme: dark;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+
+    opacity: 1;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   NUMBER FIELD
+   ===================================================== */
+
+input[type="number"] {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   TEXTAREA
+   ===================================================== */
+
+textarea {
+    min-height: 135px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   INPUT ANIMATION
+   ===================================================== */
+
+#saleForm input,
+#saleForm textarea,
+#saleForm select {
+    animation:
+        inputAppear 0.6s ease both;
+}
+
+
+#saleForm input:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+#saleForm input:nth-child(2) {
+    animation-delay: 0.14s;
+}
+
+#saleForm input:nth-child(3) {
+    animation-delay: 0.20s;
+}
+
+#saleForm input:nth-child(4) {
+    animation-delay: 0.26s;
+}
+
+#saleForm input:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+#saleForm input:nth-child(6) {
+    animation-delay: 0.38s;
+}
+
+#saleForm input:nth-child(7) {
+    animation-delay: 0.44s;
+}
+
+#saleForm textarea {
+    animation-delay: 0.50s;
+}
+
+
+@keyframes inputAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =====================================================
+   PUBLISH BUTTON
+   ===================================================== */
 
 button {
+    position: relative;
+
     width: 100%;
-    padding: 15px;
-    margin-top: 15px;
-    border: 0;
-    border-radius: 10px;
-    background: #6c4df6;
-    color: white;
+
+    margin-top: 8px;
+
+    padding: 17px 25px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            100deg,
+            #4823c9,
+            #6c4df6,
+            #914dff,
+            #d946ef
+        );
+
+    background-size: 300% 100%;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    box-shadow:
+        0 15px 35px rgba(108, 77, 246, 0.32);
+
+    animation:
+        buttonGradient 5s ease infinite;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 45px rgba(108, 77, 246, 0.48),
+        0 0 30px rgba(217, 70, 239, 0.20);
+}
+
+
+button:active {
+    transform:
+        scale(0.98);
+}
+
+
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: -30%;
+
+    left: -100px;
+
+    width: 70px;
+
+    height: 160%;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    transform:
+        rotate(20deg);
+
+    animation:
+        buttonShine 3s ease-in-out infinite;
+}
+
+
+@keyframes buttonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes buttonShine {
+    0% {
+        left: -120px;
+    }
+
+    55%,
+    100% {
+        left: 120%;
+    }
+}
+
+
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #080811;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #6c4df6,
+            #d946ef
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .form-box {
+        width: 92%;
+
+        margin:
+            30px auto;
+
+        padding:
+            30px 20px 35px;
+
+        border-radius: 22px;
+    }
+
+
+    .form-box h1 {
+        font-size: 28px;
+    }
+
+
+    input,
+    textarea,
+    select {
+        padding:
+            14px 15px;
+    }
+
+
+    .form-box::after {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+
 }

@@ -1,0 +1,875 @@
+/* =========================================================
+   SALEFINDER - SHOP PAGE
+   DARK 3D PURPLE / NEON THEME
+   ========================================================= */
+
+:root {
+    --bg: #080811;
+    --bg2: #100d22;
+
+    --purple: #6c4df6;
+    --purple-light: #9b7cff;
+    --purple-dark: #351d9b;
+    --pink: #d946ef;
+
+    --white: #ffffff;
+    --white-soft: rgba(255, 255, 255, 0.82);
+
+    --card-bg: rgba(20, 18, 38, 0.78);
+    --border: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    color: var(--white);
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(108, 77, 246, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(217, 70, 239, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #080811,
+            #0c0a18,
+            #080811
+        );
+
+    animation: pageLoad 0.5s ease;
+}
+
+
+/* =========================================================
+   ANIMATED BACKGROUND
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 430px;
+    height: 430px;
+
+    top: -190px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(108, 77, 246, 0.34),
+            rgba(108, 77, 246, 0.08) 45%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        leftOrb 9s ease-in-out infinite;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+    height: 420px;
+
+    right: -160px;
+    bottom: -170px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(217, 70, 239, 0.22),
+            rgba(108, 77, 246, 0.08) 45%,
+            transparent 72%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        rightOrb 11s ease-in-out infinite;
+}
+
+
+@keyframes leftOrb {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(100px, 80px, 0)
+            scale(1.15);
+    }
+}
+
+
+@keyframes rightOrb {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(-100px, -80px, 0)
+            scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background:
+        rgba(8, 8, 17, 0.82);
+
+    border-bottom:
+        1px solid
+        rgba(151, 125, 255, 0.14);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 10px 40px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   HEADER LOGO
+   ========================================================= */
+
+header h2 {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    letter-spacing: -0.5px;
+
+    text-shadow:
+        0 0 20px
+        rgba(108, 77, 246, 0.35);
+}
+
+header h2::first-letter {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HOME BUTTON
+   ========================================================= */
+
+header a {
+    text-decoration: none;
+
+    color: #ffffff;
+
+    padding:
+        10px 20px;
+
+    border-radius:
+        10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--purple-dark),
+            var(--purple),
+            var(--pink)
+        );
+
+    background-size:
+        200% 100%;
+
+    box-shadow:
+        0 8px 25px
+        rgba(108, 77, 246, 0.30);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        headerGradient 5s ease infinite;
+}
+
+
+header a:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(108, 77, 246, 0.50);
+}
+
+
+@keyframes headerGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   SHOP PAGE
+   ========================================================= */
+
+main {
+    width: 100%;
+}
+
+
+.page {
+    min-height: calc(100vh - 75px);
+
+    padding:
+        80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.page-content {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SHOP HEADING
+   ========================================================= */
+
+.page-content h2 {
+    font-size: 48px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    letter-spacing: -1.5px;
+
+    text-shadow:
+        0 0 25px
+        rgba(108, 77, 246, 0.20);
+}
+
+
+/* Purple word */
+
+.page-content h2 span {
+    color: var(--purple-light) !important;
+
+    text-shadow:
+        0 0 20px
+        rgba(139, 108, 255, 0.60);
+
+    animation:
+        headingGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes headingGlow {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(
+                0 0 5px
+                rgba(108, 77, 246, 0.20)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(108, 77, 246, 0.60)
+            );
+    }
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.page-content > p {
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   SALES GRID
+   ========================================================= */
+
+.sales-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   SALE CARD
+   ========================================================= */
+
+.sale-item {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 210px;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 23, 46, 0.92),
+            rgba(12, 12, 24, 0.94)
+        );
+
+    border:
+        1px solid
+        rgba(151, 125, 255, 0.15);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.30);
+
+    backdrop-filter:
+        blur(15px);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Card glow */
+
+.sale-item::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -75px;
+    top: -75px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(108, 77, 246, 0.20);
+
+    filter:
+        blur(8px);
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.sale-item::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    left: -50px;
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(217, 70, 239, 0.12);
+
+    filter:
+        blur(10px);
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.sale-item:hover {
+    transform:
+        translateY(-10px)
+        perspective(800px)
+        rotateX(2deg);
+
+    border-color:
+        rgba(139, 108, 255, 0.50);
+
+    box-shadow:
+        0 25px 55px
+        rgba(0, 0, 0, 0.45),
+
+        0 0 35px
+        rgba(108, 77, 246, 0.18);
+}
+
+
+.sale-item:hover::before {
+    transform:
+        scale(1.3);
+}
+
+
+/* =========================================================
+   DISCOUNT
+   ========================================================= */
+
+.discount {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    color:
+        var(--purple-light);
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    text-shadow:
+        0 0 15px
+        rgba(139, 108, 255, 0.55);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.sale-item h3 {
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        #ffffff;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   STORE
+   ========================================================= */
+
+.sale-item .store {
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   TAG
+   ========================================================= */
+
+.sale-item .tag {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        20px;
+
+    color:
+        var(--purple-light);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    background:
+        rgba(108, 77, 246, 0.10);
+
+    border:
+        1px solid
+        rgba(151, 125, 255, 0.18);
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(108, 77, 246, 0.05);
+}
+
+
+/* =========================================================
+   SCROLL HINT
+   ========================================================= */
+
+.scroll-hint {
+    margin-top: 40px;
+
+    text-align: center;
+
+    color:
+        rgba(255, 255, 255, 0.35);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    animation:
+        hintFade 2s ease-in-out infinite;
+}
+
+
+.scroll-hint i {
+    margin-right: 7px;
+
+    color:
+        var(--purple-light);
+
+    text-shadow:
+        0 0 12px
+        var(--purple);
+
+    animation:
+        arrowMove 1.5s ease-in-out infinite;
+}
+
+
+@keyframes arrowMove {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(6px);
+    }
+}
+
+
+@keyframes hintFade {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:
+        #080811;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #6c4df6,
+            #d946ef
+        );
+
+    border-radius:
+        20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            #9b7cff,
+            #d946ef
+        );
+}
+
+
+/* =========================================================
+   PAGE LOAD ANIMATION
+   ========================================================= */
+
+@keyframes pageLoad {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .sales-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .page {
+        padding:
+            70px 6%;
+    }
+
+    .page-content h2 {
+        font-size: 42px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        height: 70px;
+
+        padding:
+            0 5%;
+    }
+
+    header h2 {
+        font-size: 21px;
+    }
+
+    header a {
+        padding:
+            9px 15px;
+
+        font-size: 12px;
+    }
+
+    .page {
+        min-height:
+            calc(100vh - 70px);
+
+        padding:
+            60px 5%;
+    }
+
+    .page-content h2 {
+        font-size: 35px;
+    }
+
+    .page-content > p {
+        font-size: 16px;
+    }
+
+    .sales-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+    }
+
+    .sale-item {
+        min-height: 190px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .page-content h2 {
+        font-size: 30px;
+    }
+
+    .page {
+        padding:
+            50px 5%;
+    }
+
+    .sale-item {
+        padding: 22px;
+    }
+
+    .discount {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+    }
+}
