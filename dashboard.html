@@ -5,120 +5,136 @@
 
     <meta charset="UTF-8">
 
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>SaleFinder | Dashboard</title>
 
-    <link
-            rel="stylesheet"
-            href="css/dashboard.css"
-    >
-
-    <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet"
-    >
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="./dashboard.css">
 
 </head>
 
+
 <body>
+
 
 <div class="app">
 
-    <!-- SIDEBAR -->
+
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
+
         <a href="index.html" class="logo">
 
-            <span class="logo-box">S</span>
+            <div class="logo-icon">
+                S
+            </div>
 
-            <span>
-                Sale<span class="purple">Finder</span>
-            </span>
+            <div class="logo-text">
+                Sale<span>Finder</span>
+            </div>
 
         </a>
 
 
-        <p class="menu-label">
+        <div class="menu-title">
             MAIN MENU
-        </p>
+        </div>
 
 
-        <nav class="navigation">
+        <nav class="menu">
 
-            <a
-                    href="dashboard.html"
-                    class="nav-item active"
-            >
-                <span>⌂</span>
-                Dashboard
+
+            <a href="dashboard.html"
+               class="menu-item active">
+
+                <span class="icon">⌂</span>
+
+                <span>Dashboard</span>
+
             </a>
 
 
-            <a
-                    href="post-sale.html"
-                    class="nav-item"
-            >
-                <span>＋</span>
-                Post a Sale
+            <a href="post-sale.html"
+               class="menu-item">
+
+                <span class="icon">＋</span>
+
+                <span>Post a Sale</span>
+
             </a>
 
 
-            <a
-                    href="explore.html"
-                    class="nav-item"
-            >
-                <span>⌕</span>
-                Explore Sales
+            <a href="explore.html"
+               class="menu-item">
+
+                <span class="icon">⌕</span>
+
+                <span>Explore Sales</span>
+
             </a>
 
 
-            <a
-                    href="profile.html"
-                    class="nav-item"
-            >
-                <span>♙</span>
-                My Profile
+            <a href="profile.html"
+               class="menu-item">
+
+                <span class="icon">♙</span>
+
+                <span>My Profile</span>
+
             </a>
+
 
         </nav>
 
 
         <div class="sidebar-bottom">
 
-            <a href="profile.html">
-                ⚙️ Settings
+
+            <a href="profile.html"
+               class="bottom-link">
+
+                ⚙️
+                <span>Settings</span>
+
             </a>
 
-            <button onclick="logout()">
-                ↪ Logout
+
+            <button
+                    onclick="logout()"
+                    class="logout-button">
+
+                ↪
+                <span>Logout</span>
+
             </button>
 
+
         </div>
+
 
     </aside>
 
 
-    <!-- MAIN -->
+
+    <!-- ================= MAIN ================= -->
 
     <main class="main">
+
 
         <!-- TOP BAR -->
 
         <header class="topbar">
 
-            <div class="mobile-logo">
-                SaleFinder
-            </div>
 
+            <div class="search-box">
 
-            <div class="search">
-
-                <span>⌕</span>
+                <span class="search-icon">
+                    ⌕
+                </span>
 
                 <input
                         type="text"
@@ -129,24 +145,26 @@
             </div>
 
 
-            <div class="user-area">
+            <div class="top-right">
+
 
                 <button class="notification">
+
                     🔔
-                    <i></i>
+
+                    <span class="notification-dot"></span>
+
                 </button>
 
 
-                <a
-                        href="profile.html"
-                        class="user"
-                >
+                <a href="profile.html"
+                   class="profile">
 
                     <div class="avatar">
                         👤
                     </div>
 
-                    <div class="user-text">
+                    <div class="profile-info">
 
                         <strong id="userName">
                             Shopkeeper
@@ -160,20 +178,26 @@
 
                 </a>
 
+
             </div>
+
 
         </header>
 
 
-        <!-- WELCOME -->
 
-        <section class="welcome">
+        <!-- ================= WELCOME ================= -->
 
-            <div>
+        <section class="welcome-section">
 
-                <p class="eyebrow">
+
+            <div class="welcome-text">
+
+
+                <div class="small-heading">
                     SHOPKEEPER DASHBOARD
-                </p>
+                </div>
+
 
                 <h1>
                     Welcome back,
@@ -183,18 +207,18 @@
                     👋
                 </h1>
 
+
                 <p>
-                    Manage your offers and reach more
-                    customers around you.
+                    Manage your offers and reach
+                    more customers around you.
                 </p>
+
 
             </div>
 
 
-            <a
-                    href="post-sale.html"
-                    class="primary-btn"
-            >
+            <a href="post-sale.html"
+               class="post-button">
 
                 <span>＋</span>
 
@@ -202,109 +226,126 @@
 
             </a>
 
+
         </section>
 
 
-        <!-- STATS -->
 
-        <section class="stats-grid">
+        <!-- ================= STATS ================= -->
 
-            <div class="stat">
+        <section class="stats">
 
-                <div class="stat-icon purple-bg">
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
                     🏷️
                 </div>
 
-                <div>
+                <div class="stat-content">
 
-                    <span>
-                        Total Sales
-                    </span>
+                    <p>Total Sales</p>
 
                     <h2 id="totalSales">
                         0
                     </h2>
 
+                    <span class="stat-growth">
+                        ↑ All posted sales
+                    </span>
+
                 </div>
 
             </div>
 
 
-            <div class="stat">
 
-                <div class="stat-icon green-bg">
+            <div class="stat-card">
+
+                <div class="stat-icon green">
                     🔥
                 </div>
 
-                <div>
+                <div class="stat-content">
 
-                    <span>
-                        Active Offers
-                    </span>
+                    <p>Active Offers</p>
 
                     <h2 id="activeSales">
                         0
                     </h2>
 
+                    <span class="stat-growth green-text">
+                        ● Currently active
+                    </span>
+
                 </div>
 
             </div>
 
 
-            <div class="stat">
 
-                <div class="stat-icon blue-bg">
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
                     👁️
                 </div>
 
-                <div>
+                <div class="stat-content">
 
-                    <span>
-                        Total Views
-                    </span>
+                    <p>Total Views</p>
 
                     <h2>
                         1,284
                     </h2>
 
+                    <span class="stat-growth">
+                        ↑ 18.5% this month
+                    </span>
+
                 </div>
 
             </div>
 
 
-            <div class="stat">
 
-                <div class="stat-icon orange-bg">
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
                     ❤️
                 </div>
 
-                <div>
+                <div class="stat-content">
 
-                    <span>
-                        Saved Offers
-                    </span>
+                    <p>Saved Offers</p>
 
                     <h2>
                         326
                     </h2>
 
+                    <span class="stat-growth orange-text">
+                        ↑ 12.4% this month
+                    </span>
+
                 </div>
 
             </div>
 
+
         </section>
 
 
-        <!-- CONTENT -->
 
-        <section class="dashboard-grid">
+        <!-- ================= CONTENT ================= -->
+
+        <section class="content-grid">
 
 
             <!-- SALES -->
 
-            <div class="sales-area">
+            <div class="sales-section">
 
-                <div class="section-title">
+
+                <div class="section-header">
 
                     <div>
 
@@ -326,56 +367,251 @@
                 </div>
 
 
-                <div
-                        id="salesContainer"
-                        class="sales-grid"
-                >
+                <div id="salesContainer"
+                     class="sales-container">
 
-                    <div class="loading">
-                        Loading sales...
+
+                    <!-- Demo cards -->
+
+                    <div class="sale-card">
+
+
+                        <div class="sale-banner">
+
+                            <span class="sale-badge">
+                                LIVE
+                            </span>
+
+                            <div class="discount">
+                                50%
+                                <small>OFF</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="sale-details">
+
+                            <h3>
+                                Summer Fashion Sale
+                            </h3>
+
+                            <p class="shop-name">
+                                🏪 Fashion Hub
+                            </p>
+
+
+                            <div class="sale-info">
+
+                                <span>
+                                    📍 Pune
+                                </span>
+
+                                <span>
+                                    ⏳ 5 days left
+                                </span>
+
+                            </div>
+
+
+                            <div class="card-actions">
+
+                                <a
+                                        href="sale-details.html?id=1"
+                                        class="view-button">
+
+                                    View Details
+
+                                </a>
+
+
+                                <button
+                                        onclick="shareSale(1)"
+                                        class="share-button">
+
+                                    ↗
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
+
+
+                    <div class="sale-card">
+
+
+                        <div class="sale-banner green-banner">
+
+                            <span class="sale-badge">
+                                LIVE
+                            </span>
+
+                            <div class="discount">
+                                30%
+                                <small>OFF</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="sale-details">
+
+                            <h3>
+                                Weekend Electronics Sale
+                            </h3>
+
+                            <p class="shop-name">
+                                🏪 Tech World
+                            </p>
+
+
+                            <div class="sale-info">
+
+                                <span>
+                                    📍 Nagpur
+                                </span>
+
+                                <span>
+                                    ⏳ 2 days left
+                                </span>
+
+                            </div>
+
+
+                            <div class="card-actions">
+
+                                <a
+                                        href="sale-details.html?id=2"
+                                        class="view-button">
+
+                                    View Details
+
+                                </a>
+
+
+                                <button
+                                        onclick="shareSale(2)"
+                                        class="share-button">
+
+                                    ↗
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
                 </div>
+
 
             </div>
 
 
-            <!-- SIDE -->
 
-            <aside class="side-content">
+            <!-- RIGHT SIDE -->
+
+            <aside class="right-column">
 
 
-                <!-- QUICK ACTION -->
+                <!-- QUICK ACTIONS -->
 
-                <div class="glass-card">
+                <div class="panel">
+
 
                     <h3>
                         Quick Actions
                     </h3>
 
-                    <a href="post-sale.html">
-                        <span>＋</span>
-                        Create Sale
+
+                    <a href="post-sale.html"
+                       class="quick-action">
+
+                        <div class="quick-icon purple-icon">
+                            ＋
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Create Sale
+                            </strong>
+
+                            <small>
+                                Publish a new offer
+                            </small>
+
+                        </div>
+
+                        <span>→</span>
+
                     </a>
 
-                    <a href="explore.html">
-                        <span>⌕</span>
-                        Explore Offers
+
+                    <a href="explore.html"
+                       class="quick-action">
+
+                        <div class="quick-icon blue-icon">
+                            ⌕
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Explore Offers
+                            </strong>
+
+                            <small>
+                                Discover local deals
+                            </small>
+
+                        </div>
+
+                        <span>→</span>
+
                     </a>
 
-                    <a href="profile.html">
-                        <span>⚙</span>
-                        Manage Profile
+
+                    <a href="profile.html"
+                       class="quick-action">
+
+                        <div class="quick-icon green-icon">
+                            ⚙
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                My Profile
+                            </strong>
+
+                            <small>
+                                Manage shop details
+                            </small>
+
+                        </div>
+
+                        <span>→</span>
+
                     </a>
+
 
                 </div>
 
 
+
                 <!-- PERFORMANCE -->
 
-                <div class="glass-card performance">
+                <div class="panel performance">
 
-                    <div class="performance-head">
+
+                    <div class="performance-header">
 
                         <div>
 
@@ -383,13 +619,14 @@
                                 Performance
                             </h3>
 
-                            <small>
-                                This month
-                            </small>
+                            <p>
+                                Your sales reach
+                            </p>
 
                         </div>
 
-                        <span>
+
+                        <span class="growth">
                             +24.8%
                         </span>
 
@@ -399,28 +636,55 @@
                     <div class="chart">
 
                         <div style="height:35%"></div>
-                        <div style="height:55%"></div>
+
+                        <div style="height:48%"></div>
+
                         <div style="height:42%"></div>
-                        <div style="height:70%"></div>
-                        <div style="height:58%"></div>
-                        <div style="height:80%"></div>
+
+                        <div style="height:62%"></div>
+
+                        <div style="height:55%"></div>
+
+                        <div style="height:76%"></div>
+
                         <div style="height:68%"></div>
+
                         <div style="height:90%"></div>
 
                     </div>
 
+
+                    <div class="chart-labels">
+
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+
+                    </div>
+
+
                 </div>
+
 
             </aside>
 
+
         </section>
+
 
     </main>
 
 </div>
 
 
-<script src="js/dashboard.js"></script>
+<!-- JS FILE -->
+
+<script src="./dashboard.js"></script>
+
 
 </body>
 
