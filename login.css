@@ -1,7 +1,6 @@
-css
-/* ================================
-   SaleFinder - Login Page
-================================ */
+/* =========================================
+   SaleFinder - Dark Purple Login
+========================================= */
 
 * {
     margin: 0;
@@ -11,132 +10,276 @@ css
 
 body {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
+    padding: 30px;
+
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
 
-    background:
-        radial-gradient(circle at top left, #e9e3ff 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #dfe7ff 0%, transparent 35%),
-        #f6f7fb;
+    color: #ffffff;
 
-    color: #171717;
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(124, 92, 255, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(109, 40, 217, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #08080d,
+            #0d0b14 50%,
+            #08080d
+        );
+
+    position: relative;
+
+    overflow: hidden;
 }
 
 
-/* ================================
+/* =========================================
+   Animated Background Glow
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    top: -150px;
+    left: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(124, 92, 255, 0.14);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    animation: glowOne 10s ease-in-out infinite;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    right: -150px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(147, 51, 234, 0.13);
+
+    filter: blur(90px);
+
+    pointer-events: none;
+
+    animation: glowTwo 12s ease-in-out infinite;
+}
+
+
+/* =========================================
    Login Card
-================================ */
+========================================= */
 
 .box {
-    width: 420px;
-    max-width: calc(100% - 30px);
+    width: 430px;
 
-    padding: 42px;
+    max-width: 100%;
 
-    background: rgba(255, 255, 255, 0.92);
+    padding: 45px 42px;
 
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(20, 18, 29, 0.94);
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
 
     border-radius: 24px;
 
     box-shadow:
-        0 25px 60px rgba(45, 35, 90, 0.12),
-        0 5px 20px rgba(0, 0, 0, 0.04);
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 0 40px rgba(124, 92, 255, 0.06);
 
-    backdrop-filter: blur(15px);
+    position: relative;
 
-    animation: cardAppear 0.5s ease;
+    z-index: 1;
+
+    animation: cardEntry 0.7s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
-/* ================================
-   Logo / Heading
-================================ */
+.box:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(139, 92, 246, 0.45);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.65),
+        0 0 45px rgba(124, 92, 255, 0.12);
+}
+
+
+/* =========================================
+   Purple Top Line
+========================================= */
+
+.box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 12%;
+    right: 12%;
+
+    height: 4px;
+
+    border-radius: 0 0 10px 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #a855f7,
+        #6d28d9
+    );
+}
+
+
+/* =========================================
+   Heading
+========================================= */
 
 .box h1 {
     text-align: center;
 
-    font-size: 32px;
+    font-size: 34px;
+
     font-weight: 800;
 
     letter-spacing: -1px;
 
-    margin-bottom: 8px;
+    margin-bottom: 35px;
 
-    color: #171717;
+    color: #ffffff;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
+
+.box:hover h1 {
+    color: #a78bfa;
+
+    transform: translateY(-1px);
+}
+
 
 .box h1::after {
     content: "Find the best deals around you";
 
     display: block;
 
-    margin-top: 8px;
+    margin-top: 10px;
 
     font-size: 13px;
+
     font-weight: 400;
 
     letter-spacing: 0;
 
-    color: #888;
+    color: #85818f;
 }
 
 
-/* ================================
-   Inputs & Select
-================================ */
+/* =========================================
+   Inputs
+========================================= */
 
 input,
 select {
     width: 100%;
 
-    height: 52px;
+    height: 54px;
 
-    padding: 0 16px;
+    padding: 0 17px;
 
     margin: 8px 0;
 
-    border: 1px solid #e2e2e8;
+    border: 1px solid #2d2938;
 
     border-radius: 12px;
 
-    background: #fafaff;
+    background: #111019;
 
-    color: #333;
+    color: #ffffff;
 
     font-size: 14px;
+
+    font-family: inherit;
 
     outline: none;
 
     transition:
-        border 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 
 input::placeholder {
-    color: #aaa;
+    color: #77727f;
+}
+
+
+input:hover,
+select:hover {
+    border-color: #6845b5;
+
+    background: #15121f;
 }
 
 
 input:focus,
 select:focus {
-    border-color: #6c4df6;
+    border-color: #8b5cf6;
 
-    background: white;
+    background: #15121f;
+
+    transform: translateY(-1px);
 
     box-shadow:
-        0 0 0 4px rgba(108, 77, 246, 0.10);
+        0 0 0 4px rgba(139, 92, 246, 0.12),
+        0 8px 25px rgba(124, 58, 237, 0.10);
 }
 
 
-/* ================================
+/* =========================================
    Select
-================================ */
+========================================= */
 
 select {
     cursor: pointer;
@@ -144,8 +287,16 @@ select {
     appearance: none;
 
     background-image:
-        linear-gradient(45deg, transparent 50%, #777 50%),
-        linear-gradient(135deg, #777 50%, transparent 50%);
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #a78bfa 50%
+        ),
+        linear-gradient(
+            135deg,
+            #a78bfa 50%,
+            transparent 50%
+        );
 
     background-position:
         calc(100% - 18px) 22px,
@@ -159,137 +310,215 @@ select {
 }
 
 
-/* ================================
-   Buttons
-================================ */
+/* =========================================
+   Main Button
+========================================= */
 
 button {
     width: 100%;
 
-    height: 52px;
+    height: 54px;
+
+    margin-top: 15px;
 
     padding: 0 18px;
 
-    margin-top: 12px;
-
-    border: none;
+    border: 1px solid transparent;
 
     border-radius: 12px;
 
-    background: linear-gradient(
-        135deg,
-        #7b5cff,
-        #5a3de0
-    );
+    background: #7c3aed;
 
-    color: white;
+    color: #ffffff;
+
+    font-family: inherit;
 
     font-size: 15px;
+
     font-weight: 600;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px rgba(108, 77, 246, 0.25);
+        0 10px 25px rgba(124, 58, 237, 0.20);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease;
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
+
+/* Purple Hover */
 
 button:hover {
-    transform: translateY(-2px);
+    background: #9333ea;
+
+    transform: translateY(-3px);
+
+    border-color: #a855f7;
 
     box-shadow:
-        0 15px 30px rgba(108, 77, 246, 0.32);
+        0 15px 35px rgba(147, 51, 234, 0.35);
 }
 
+
+/* Click */
 
 button:active {
     transform: translateY(0);
+
+    box-shadow:
+        0 7px 18px rgba(124, 58, 237, 0.25);
 }
 
 
-/* ================================
+/* =========================================
    Divider
-================================ */
+========================================= */
 
 hr {
     border: none;
 
     height: 1px;
 
-    background: #eeeeF2;
+    background: #292532;
 
-    margin: 25px 0 18px;
+    margin: 27px 0 17px;
 }
 
 
-/* ================================
-   Second Button
-================================ */
+/* =========================================
+   Login Button
+========================================= */
 
 hr + button {
-    background: white;
+    background: transparent;
 
-    color: #6c4df6;
+    color: #a78bfa;
 
-    border: 1px solid #ddd8ff;
+    border: 1px solid #393247;
 
     box-shadow: none;
 }
 
 
 hr + button:hover {
-    background: #f8f6ff;
+    background: #7c3aed;
+
+    color: #ffffff;
+
+    border-color: #a855f7;
 
     box-shadow:
-        0 8px 20px rgba(108, 77, 246, 0.10);
+        0 12px 28px rgba(124, 58, 237, 0.30);
 }
 
 
-/* ================================
-   Animation
-================================ */
+/* =========================================
+   Card Animation
+========================================= */
 
-@keyframes cardAppear {
+@keyframes cardEntry {
 
     from {
         opacity: 0;
-        transform: translateY(20px) scale(0.98);
+
+        transform:
+            translateY(35px)
+            scale(0.96);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
-    }
 
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 
-/* ================================
-   Mobile Responsive
-================================ */
+/* =========================================
+   Background Animations
+========================================= */
+
+@keyframes glowOne {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(60px, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+@keyframes glowTwo {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-50px, -35px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
 
 @media (max-width: 500px) {
 
     body {
-        padding: 20px;
+        padding: 18px;
     }
 
     .box {
         width: 100%;
 
-        padding: 30px 22px;
+        padding: 38px 24px;
 
         border-radius: 20px;
     }
 
     .box h1 {
-        font-size: 28px;
+        font-size: 29px;
     }
 
+    input,
+    select,
+    button {
+        height: 52px;
+    }
 }
 
+
+/* =========================================
+   Small Height Screens
+========================================= */
+
+@media (max-height: 650px) {
+
+    body {
+        align-items: flex-start;
+
+        padding-top: 25px;
+    }
+
+    .box {
+        margin-bottom: 20px;
+    }
+}
