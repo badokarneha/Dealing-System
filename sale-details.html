@@ -1,84 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaleFinder · Sales details</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* =========================================================
+       SALEFINDER — DARK 3D PURPLE THEME (same as before)
+       ========================================================= */
+    :root {
+      --bg: #080811;
+      --bg2: #100d22;
+      --purple: #6c4df6;
+      --purple-light: #9b7cff;
+      --purple-dark: #351d9b;
+      --pink: #d946ef;
+      --white: #ffffff;
+      --white-soft: rgba(255, 255, 255, 0.82);
+      --card-bg: rgba(20, 18, 38, 0.78);
+      --border: rgba(255, 255, 255, 0.10);
+    }
 
-    <meta charset="UTF-8">
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    html { scroll-behavior: smooth; }
 
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-    >
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(108, 77, 246, 0.18), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(217, 70, 239, 0.10), transparent 30%),
+        linear-gradient(135deg, #080811, #0c0a18, #080811);
+      color: var(--white);
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem 1rem;
+    }
 
-    <title>
-        Sale Details | SaleFinder
-    </title>
+    body::before {
+      content: "";
+      position: fixed;
+      width: 430px;
+      height: 430px;
+      top: -190px;
+      left: -150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(108, 77, 246, 0.34), rgba(108, 77, 246, 0.08) 45%, transparent 72%);
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: -2;
+      animation: leftOrb 9s ease-in-out infinite;
+    }
 
-    <link
-            rel="stylesheet"
-            href="css/sale-details.css"
-    >
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      right: -160px;
+      bottom: -170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 70, 239, 0.22), rgba(108, 77, 246, 0.08) 45%, transparent 72%);
+      filter: blur(12px);
+      pointer-events: none;
+      z-index: -2;
+      animation: rightOrb 11s ease-in-out infinite;
+    }
 
+    @keyframes leftOrb {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(100px, 80px, 0) scale(1.15); }
+    }
+    @keyframes rightOrb {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(-100px, -80px, 0) scale(1.12); }
+    }
+
+    .card {
+      max-width: 1300px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 32px;
+      border: 1px solid rgba(151, 125, 255, 0.15);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(108, 77, 246, 0.08);
+      padding: 2rem 2rem 2.5rem;
+      transition: all 0.2s ease;
+      margin-top: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .header-left h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 0 20px rgba(108, 77, 246, 0.25);
+    }
+    .header-left h1 i {
+      color: var(--purple-light);
+      font-size: 2rem;
+      text-shadow: 0 0 20px rgba(139, 108, 255, 0.55);
+    }
+    .header-left .sub {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.68);
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-right { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(151, 125, 255, 0.20);
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--white-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.25s ease;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .btn i { color: var(--purple-light); font-size: 0.9rem; }
+    .btn-primary {
+      background: linear-gradient(100deg, var(--purple-dark), var(--purple), var(--pink));
+      background-size: 200% 100%;
+      border: none;
+      color: white;
+      box-shadow: 0 8px 25px rgba(108, 77, 246, 0.30);
+      animation: primaryGradient 5s ease infinite;
+    }
+    .btn-primary i { color: white; }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(108, 77, 246, 0.50);
+    }
+    @keyframes primaryGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .kpi-item {
+      background: rgba(20, 18, 38, 0.60);
+      backdrop-filter: blur(8px);
+      padding: 1.2rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(151, 125, 255, 0.12);
+      transition: 0.25s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+    }
+    .kpi-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139, 108, 255, 0.35);
+      box-shadow: 0 15px 35px rgba(108, 77, 246, 0.15);
+    }
+    .kpi-item .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 600;
+    }
+    .kpi-item .value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 4px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 0 15px rgba(108, 77, 246, 0.15);
+    }
+    .kpi-item .change {
+      font-size: 0.75rem;
+      background: rgba(31, 168, 106, 0.20);
+      color: #5de0a0;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 6px;
+      border: 1px solid rgba(31, 168, 106, 0.15);
+    }
+    .kpi-item .change.negative {
+      background: rgba(220, 38, 38, 0.15);
+      color: #f87171;
+      border-color: rgba(220, 38, 38, 0.15);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 20px;
+      border: 1px solid rgba(151, 125, 255, 0.10);
+      background: rgba(12, 12, 24, 0.50);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 720px; }
+    th {
+      text-align: left;
+      padding: 1rem 1rem 0.8rem 1.2rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.80);
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(151, 125, 255, 0.10);
+      background: rgba(20, 18, 38, 0.40);
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.9rem 1rem 0.9rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.85);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(108, 77, 246, 0.06); }
+
+    .badge {
+      background: rgba(108, 77, 246, 0.15);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--purple-light);
+      display: inline-block;
+      white-space: nowrap;
+      border: 1px solid rgba(151, 125, 255, 0.10);
+    }
+    .badge.success {
+      background: rgba(31, 168, 106, 0.18);
+      color: #5de0a0;
+      border-color: rgba(31, 168, 106, 0.15);
+    }
+    .badge.warning {
+      background: rgba(234, 179, 8, 0.15);
+      color: #facc15;
+      border-color: rgba(234, 179, 8, 0.12);
+    }
+    .badge.danger {
+      background: rgba(220, 38, 38, 0.15);
+      color: #f87171;
+      border-color: rgba(220, 38, 38, 0.12);
+    }
+    .text-muted { color: rgba(255, 255, 255, 0.45); font-size: 0.85rem; }
+
+    .footer-actions {
+      margin-top: 1.8rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .footer-actions .btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(151, 125, 255, 0.10);
+    }
+    .footer-actions .btn i { color: var(--purple-light); }
+    .footer-actions .btn:hover {
+      background: rgba(108, 77, 246, 0.08);
+      border-color: rgba(151, 125, 255, 0.25);
+    }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.85rem;
+    }
+    .footer-note i { color: var(--purple-light); opacity: 0.6; }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(20, 18, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(151, 125, 255, 0.25);
+      border-radius: 16px;
+      padding: 1rem 1.8rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      color: white;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 9999;
+      transform: translateY(120px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .toast i { font-size: 1.2rem; }
+    .toast.success i { color: #5de0a0; }
+    .toast.error i { color: #f87171; }
+    .toast.info i { color: var(--purple-light); }
+
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #080811; border-radius: 20px; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#6c4df6, #d946ef); border-radius: 20px; }
+    ::-webkit-scrollbar-thumb:hover { background: linear-gradient(#9b7cff, #d946ef); }
+
+    @media (max-width: 800px) {
+      .card { padding: 1.5rem 1rem; }
+      .header-left h1 { font-size: 1.5rem; }
+      .kpi-item .value { font-size: 1.4rem; }
+      .btn { font-size: 0.8rem; padding: 0.5rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      .header { flex-direction: column; align-items: flex-start; }
+      .header-right { width: 100%; }
+      .btn { flex: 1; justify-content: center; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
-
-
 <body>
 
-
-<header class="navbar">
-
-    <a
-            href="index.html"
-            class="logo"
-    >
-
-        <span class="logo-box">
-            S
-        </span>
-
-        Sale<span>Finder</span>
-
-    </a>
-
-
-    <nav>
-
-        <a href="explore.html">
-            Explore
-        </a>
-
-        <a href="dashboard.html">
-            Dashboard
-        </a>
-
-        <a
-                href="post-sale.html"
-                class="nav-button"
-        >
-            Post Sale
-        </a>
-
-    </nav>
-
-</header>
-
-
-
-<main class="page">
-
-    <div id="sale">
-
-        <div class="loading">
-            Loading sale...
+  <div class="card">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-left">
+        <h1><i class="fas fa-chart-simple"></i> Sales details</h1>
+        <div class="sub">
+          <i class="fas fa-calendar-alt" style="color: var(--purple-light);"></i>
+          <span id="lastUpdated">Last 30 days · loading...</span>
         </div>
-
+      </div>
+      <div class="header-right">
+        <button class="btn" id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+        <button class="btn btn-primary" id="addRecordBtn"><i class="fas fa-plus-circle"></i> Add record</button>
+      </div>
     </div>
 
-</main>
+    <!-- KPI CARDS -->
+    <div class="kpi-grid" id="kpiGrid">
+      <div class="kpi-item">
+        <div class="label"><i class="far fa-dollar" style="margin-right: 4px;"></i> Total revenue</div>
+        <div class="value" id="kpiRevenue">--</div>
+        <span class="change" id="kpiRevenueChange">--</span>
+      </div>
+      <div class="kpi-item">
+        <div class="label"><i class="fas fa-cart-shopping" style="margin-right: 4px;"></i> Orders</div>
+        <div class="value" id="kpiOrders">--</div>
+        <span class="change" id="kpiOrdersChange">--</span>
+      </div>
+      <div class="kpi-item">
+        <div class="label"><i class="fas fa-user-check"></i> Active customers</div>
+        <div class="value" id="kpiCustomers">--</div>
+        <span class="change" id="kpiCustomersChange">--</span>
+      </div>
+      <div class="kpi-item">
+        <div class="label"><i class="fas fa-receipt"></i> Avg. order value</div>
+        <div class="value" id="kpiAvgOrder">--</div>
+        <span class="change" id="kpiAvgOrderChange">--</span>
+      </div>
+    </div>
 
+    <!-- TABLE -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="salesTableBody">
+          <tr><td colspan="6" style="text-align:center; padding: 2rem; color: rgba(255,255,255,0.4);">
+            <i class="fas fa-spinner fa-pulse" style="margin-right: 8px;"></i> Loading sales data...
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
 
-<script src="js/sale-details.js"></script>
+    <!-- footer -->
+    <div class="footer-actions">
+      <button class="btn" id="exportBtn"><i class="fas fa-download"></i> Export</button>
+      <button class="btn" id="printBtn"><i class="fas fa-print"></i> Print</button>
+      <button class="btn" id="pdfBtn"><i class="fas fa-file-pdf"></i> PDF</button>
+    </div>
+    <div class="footer-note">
+      <span><i class="far fa-clock"></i> <span id="rowCount">0</span> transactions</span>
+      <span><i class="fas fa-info-circle"></i> All amounts in USD · tax excluded</span>
+    </div>
+  </div>
 
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Done</span>
+  </div>
+
+  
 </body>
-
 </html>
