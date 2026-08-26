@@ -1,57 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login</title>
+    <title>SaleFinder - Login</title>
 
-    <link rel="stylesheet"
-          href="login.css">
-
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
-<div class="box">
+    <div class="box">
 
-    <h1>SaleFinder</h1>
+        <h1>SaleFinder</h1>
 
-    <input id="name"
-           placeholder="Name">
+        <input
+            id="name"
+            type="text"
+            placeholder="Name"
+        >
 
-    <input id="email"
-           type="email"
-           placeholder="Email">
+        <input
+            id="email"
+            type="email"
+            placeholder="Email"
+        >
 
-    <input id="password"
-           type="password"
-           placeholder="Password">
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+        >
 
-    <select id="role">
+        <select id="role">
+            <option value="customer">Customer</option>
+            <option value="shopkeeper">Shopkeeper</option>
+        </select>
 
-        <option value="customer">
-            Customer
-        </option>
+        <button type="button" onclick="register()">
+            Create Account
+        </button>
 
-        <option value="shopkeeper">
-            Shopkeeper
-        </option>
+        <hr>
 
-    </select>
+        <button type="button" onclick="login()">
+            Login
+        </button>
 
-    <button onclick="register()">
-        Create Account
-    </button>
+    </div>
 
-    <hr>
-
-    <button onclick="login()">
-        Login
-    </button>
-
-</div>
-
-<script src="login.js"></script>
+    <script src="login.js"></script>
 
 </body>
+
 </html>
