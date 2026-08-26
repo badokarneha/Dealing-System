@@ -1,420 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SaleFinder</title>
-
+    <title>SaleFinder · scroll pages (index + shop)</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
+<div class="scroll-container">
 
-    <header>
+     <header>
+            <div class="logo">Sale<span>Finder</span></div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="shop.html">Explore</a>
+                <a href="sale-details.html">Post Sale</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="sale-details.html">Sales details</a>
+            </nav>
+            <a class="login" href="#profile">Login</a>
+        </header>
 
-        <!-- Logo -->
-        <div class="logo">
-            Sale<span>Finder</span>
-        </div>
+    <!-- ========== PAGE 1 : HOME (index.html) ========== -->
+    <section class="page" id="home">
+       
 
-        <!-- Navigation -->
-        <nav class="main-nav">
-
-            <a href="index.html" class="nav-link active">
-                Home
-            </a>
-
-            <a href="shop.html" class="nav-link">
-                Explore
-            </a>
-
-            <a href="post-sale.html" class="nav-link">
-                Post Sale
-            </a>
-
-            <a href="dashboard.html" class="nav-link">
-                Dashboard
-            </a>
-
-            <a href="profile.html" class="nav-link">
-                Profile
-            </a>
-
-            <a href="sale-details.html" class="nav-link">
-                Sales Details
-            </a>
-
-        </nav>
-
-        <!-- Login -->
-        <a class="login" href="login.html">
-            Login
-        </a>
-
-    </header>
-
-
-    <!-- ================= HERO SECTION ================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-text">
-
-            <p class="tag">
-                DISCOVER • SAVE • SHOP
-            </p>
-
-            <h1>
-                Never miss a
-                <span>sale</span>
-                again.
-            </h1>
-
-            <p>
-                Discover amazing offers, discounts and
-                special deals from shops around you.
-            </p>
-
-            <div class="buttons">
-
-                <a href="shop.html" class="primary">
-                    Explore Sales →
-                </a>
-
-                <a href="post-sale.html" class="secondary">
-                    Post Your Sale
-                </a>
-
+        <div class="hero">
+            <div class="hero-text">
+                <p class="tag">DISCOVER • SAVE • SHOP</p>
+                <h1>Never miss a <span>sale</span> again.</h1>
+                <p>Discover amazing offers, discounts and special deals from shops around you.</p>
+                <div class="buttons">
+                    <a href="shop.html" class="primary">Explore Sales</a>
+                    <a href="post sale.html" class="secondary">Post Your Sale</a>
+                </div>
             </div>
-
-        </div>
-
-
-        <!-- Hero Sale Card -->
-
-        <div class="hero-card">
-
-            <div class="sale-badge">
-                50% OFF
+            <div class="hero-card">
+                <div class="sale-badge">50% OFF</div>
+                <h2>Fashion Fest</h2>
+                <p>Trendy Fashion Store</p>
+                <div class="offer">Limited Time Offer</div>
             </div>
+        </div>
+        <div class="scroll-hint"><i class="fas fa-chevron-down"></i> scroll down for next pages</div>
+    </section>
 
-            <h2>
-                Fashion Fest
-            </h2>
+    <!-- ========== PAGE 2 : SHOP (shop.html) ========== -->
+    <section class="page" id="shop">
+        
 
-            <p>
-                Trendy Fashion Store
-            </p>
+        <div class="page-content">
+            <h2>Explore <span style="color:#3a7bd5;">sales</span> near you</h2>
+            <p>Browse trending offers, flash deals, and local discounts.</p>
 
-            <div class="offer">
-                Limited Time Offer
+            <!-- trending sales grid (shop.html content) -->
+            <div style="margin-top: 1.8rem;">
+                <div class="sales-grid">
+                    <div class="sale-item"><div class="discount">-40%</div><h3>Summer Style</h3><div class="store">Zara</div><div class="tag">👗 fashion</div></div>
+                    <div class="sale-item"><div class="discount">-25%</div><h3>Tech Fest</h3><div class="store">Best Buy</div><div class="tag">💻 electronics</div></div>
+                    <div class="sale-item"><div class="discount">-30%</div><h3>Home & Living</h3><div class="store">IKEA</div><div class="tag">🛋️ furniture</div></div>
+                    <div class="sale-item"><div class="discount">-15%</div><h3>Book Lovers</h3><div class="store">Barnes</div><div class="tag">📚 books</div></div>
+                    <div class="sale-item"><div class="discount">-50%</div><h3>Black Friday</h3><div class="store">Mall</div><div class="tag">🔥 flash</div></div>
+                    <div class="sale-item"><div class="discount">-20%</div><h3>Sports Gear</h3><div class="store">Nike</div><div class="tag">⚽ sports</div></div>
+                </div>
             </div>
-
+            <div class="scroll-hint" style="margin-top: 2.5rem;"><i class="fas fa-arrow-down"></i> more pages below</div>
         </div>
-
     </section>
 
+    <!-- ========== PAGE 3 : POST SALE ========== -->
+    <section class="page" id="post">
+      
 
-    <!-- ================= TRENDING SALES ================= -->
-
-    <section class="section" id="trending">
-
-        <h2>
-            Trending Sales <span>🔥</span>
-        </h2>
-
-        <!-- Sales loaded from API -->
-        <div id="salesContainer" class="sales-grid">
-
-            <!-- JavaScript will add sales here -->
-
+        <div class="page-content">
+            <h2>📢 Post your <span style="color:#3a7bd5;">sale</span></h2>
+            <p>Share your offer with thousands of shoppers. Fill in the details and reach more customers.</p>
+            <div style="background: white; padding: 2rem; border-radius: 32px; max-width: 550px; margin-top: 1.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.02);">
+                <div style="background: #eef3fc; border-radius: 60px; padding: 1.2rem 1.8rem; color: #1f3a5f; font-weight: 500; text-align: center;">
+                    <i class="fas fa-plus-circle" style="margin-right: 8px;"></i> Sale form goes here
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.6; text-align: center;">(demo: interactive form mockup)</p>
+            </div>
         </div>
-
     </section>
 
+    <!-- ========== PAGE 4 : DASHBOARD ========== -->
+    <section class="page" id="dashboard">
+       
 
-    <!-- ================= EXPLORE SECTION ================= -->
-
-    <section class="explore-section" id="explore">
-
-        <div class="explore-content">
-
-            <p class="tag">
-                EXPLORE MORE
-            </p>
-
-            <h2>
-                Find the best
-                <span>sales near you.</span>
-            </h2>
-
-            <p>
-                Discover discounts, offers and special deals
-                from stores around you. Find the perfect deal
-                before it disappears.
-            </p>
-
-            <a href="shop.html" class="primary">
-                Explore All Sales →
-            </a>
-
+        <div class="page-content">
+            <h2>📊 Dashboard</h2>
+            <p>Overview of your sales, views, and performance.</p>
+            <div class="placeholder-grid">
+                <div class="card-placeholder"><i class="fas fa-chart-line"></i><h4>234</h4><span style="font-size:0.8rem; opacity:0.6;">Total views</span></div>
+                <div class="card-placeholder"><i class="fas fa-tag"></i><h4>12</h4><span style="font-size:0.8rem; opacity:0.6;">Active sales</span></div>
+                <div class="card-placeholder"><i class="fas fa-star"></i><h4>4.8</h4><span style="font-size:0.8rem; opacity:0.6;">Rating</span></div>
+            </div>
         </div>
-
     </section>
 
+    <!-- ========== PAGE 5 : PROFILE ========== -->
+    <section class="page" id="profile">
+       
 
-    <!-- ================= QUICK ACCESS ================= -->
-
-    <section class="quick-section">
-
-        <h2>
-            Everything You Need
-        </h2>
-
-        <div class="quick-grid">
-
-            <!-- Explore -->
-
-            <a href="shop.html" class="quick-card">
-
-                <div class="quick-icon">
-                    🔎
-                </div>
-
-                <h3>
-                    Explore Sales
-                </h3>
-
-                <p>
-                    Find the latest discounts and
-                    offers available near you.
-                </p>
-
-            </a>
-
-
-            <!-- Post Sale -->
-
-            <a href="post-sale.html" class="quick-card">
-
-                <div class="quick-icon">
-                    🏷️
-                </div>
-
-                <h3>
-                    Post Your Sale
-                </h3>
-
-                <p>
-                    Have an offer? Publish your sale
-                    and reach more customers.
-                </p>
-
-            </a>
-
-
-            <!-- Dashboard -->
-
-            <a href="dashboard.html" class="quick-card">
-
-                <div class="quick-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Dashboard
-                </h3>
-
-                <p>
-                    Manage your sales and keep track
-                    of your activity.
-                </p>
-
-            </a>
-
-
-            <!-- Profile -->
-
-            <a href="profile.html" class="quick-card">
-
-                <div class="quick-icon">
-                    👤
-                </div>
-
-                <h3>
-                    Profile
-                </h3>
-
-                <p>
-                    Manage your account and personal
-                    information.
-                </p>
-
-            </a>
-
+        <div class="page-content">
+            <h2>👤 Your Profile</h2>
+            <p>Manage your account, preferences, and saved sales.</p>
+            <div style="background: white; border-radius: 60px; padding: 1.5rem 2.5rem; display: inline-block; margin-top: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                <i class="fas fa-user-circle" style="font-size: 3rem; color: #3a7bd5;"></i>
+                <span style="font-weight: 500; margin-left: 1rem;">John Doe</span>
+            </div>
         </div>
-
     </section>
 
+    <!-- ========== PAGE 6 : SALE DETAILS ========== -->
+    <section class="page" id="details">
+       
 
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-logo">
-            Sale<span>Finder</span>
+        <div class="page-content">
+            <h2>📋 Sale details</h2>
+            <p>Full information about a specific sale, including terms and location.</p>
+            <div style="background: white; border-radius: 28px; padding: 2rem; max-width: 600px; margin-top: 1.5rem; border: 1px solid rgba(0,0,0,0.02);">
+                <div style="display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap;">
+                    <span style="background: #f43f5e; color: white; padding: 0.2rem 1.5rem; border-radius: 60px; font-weight: 700;">-50%</span>
+                    <span><strong>Fashion Fest</strong> · Trendy Store</span>
+                </div>
+                <p style="margin-top: 1rem; background: #f2f6fe; padding: 1rem; border-radius: 20px; font-size: 0.95rem;">
+                    <i class="fas fa-clock" style="margin-right: 8px;"></i> Ends in 3 days · <i class="fas fa-map-pin" style="margin-left: 16px;"></i> Downtown Mall
+                </p>
+                <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity:0.7;">Extra 10% off for members. Use code: SALE10</p>
+            </div>
         </div>
+        <div style="margin-top: 2rem; text-align: center; opacity: 0.3; font-size: 0.7rem;">— end of pages —</div>
+    </section>
 
-        <p>
-            Discover • Save • Shop
-        </p>
+</div> <!-- end scroll-container -->
 
-        <div class="footer-links">
+<!-- script: update active nav link on scroll -->
+<script>
+    (function() {
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('nav a');
 
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="shop.html">
-                Explore
-            </a>
-
-            <a href="post-sale.html">
-                Post Sale
-            </a>
-
-            <a href="dashboard.html">
-                Dashboard
-            </a>
-
-            <a href="profile.html">
-                Profile
-            </a>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 SaleFinder. All rights reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script src="index.js"></script>
-
-
-    <!-- Navigation Active Page Script -->
-
-    <script>
-
-        const currentPage =
-            window.location.pathname.split("/").pop();
-
-        const navLinks =
-            document.querySelectorAll(".nav-link");
-
-
-        navLinks.forEach(link => {
-
-            const linkPage =
-                link.getAttribute("href");
-
-            if (
-                linkPage === currentPage ||
-                (
-                    currentPage === "" &&
-                    linkPage === "index.html"
-                )
-            ) {
-
-                link.classList.add("active");
-
-            } else {
-
-                link.classList.remove("active");
-
-            }
-
-        });
-
-
-        /* Page transition */
-
-        document
-            .querySelectorAll(".nav-link")
-            .forEach(link => {
-
-                link.addEventListener("click", function(event) {
-
-                    const url = this.href;
-
-                    if (
-                        !url ||
-                        url.includes("#")
-                    ) {
-                        return;
-                    }
-
-                    event.preventDefault();
-
-                    document.body.classList.add("page-exit");
-
-                    setTimeout(() => {
-
-                        window.location.href = url;
-
-                    }, 250);
-
-                });
-
-            });
-
-
-        /* Scroll reveal */
-
-        const revealElements =
-            document.querySelectorAll(
-                ".section, .explore-section, .quick-section"
-            );
-
-
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add(
-                                "show"
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.15
+        function updateActive() {
+            let currentId = 'home';
+            const scrollY = window.scrollY + 100;
+            pages.forEach(page => {
+                const top = page.offsetTop;
+                const height = page.offsetHeight;
+                if (scrollY >= top && scrollY < top + height) {
+                    currentId = page.id;
                 }
-            );
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentId) {
+                    link.classList.add('active');
+                }
+            });
+        }
 
-
-        revealElements.forEach(element => {
-
-            observer.observe(element);
-
-        });
-
-    </script>
+        window.addEventListener('scroll', updateActive);
+        window.addEventListener('load', updateActive);
+    })();
+</script>
 
 </body>
-
 </html>
