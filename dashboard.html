@@ -1,461 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SaleFinder | Dashboard</title>
-
+    <title>SaleFinder · Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="dashboard.css">
-
-    <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet">
 </head>
-
 <body>
 
-<div class="dashboard">
+<header>
+    <div class="logo">
+        Sale<span>Finder</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Explore</a>
+        <a href="post sale.html">Post Sale</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="sale-details.html">Sales details</a>
+    </nav>
+    <a class="login" href="login.html">
+        <i class="fas fa-user" style="margin-right: 8px;"></i> Login
+    </a>
+</header>
 
-    <!-- SIDEBAR -->
+<!-- =========================================================
+     DASHBOARD
+     ========================================================= -->
 
-    <aside class="sidebar">
+<section class="dashboard">
 
-        <div class="brand">
-            <div class="brand-icon">S</div>
-            <span>SaleFinder</span>
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <h1>📊 <span>Dashboard</span></h1>
+        <div class="date">
+            <i class="fas fa-calendar-alt"></i> August 26, 2026
+        </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-eye"></i></div>
+            <span class="stat-number">12.4k</span>
+            <span class="stat-label">Total Views</span>
+            <span class="stat-change"><i class="fas fa-arrow-up"></i> +12.5%</span>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-tag"></i></div>
+            <span class="stat-number">48</span>
+            <span class="stat-label">Active Sales</span>
+            <span class="stat-change"><i class="fas fa-arrow-up"></i> +8.2%</span>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-star"></i></div>
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">Average Rating</span>
+            <span class="stat-change"><i class="fas fa-arrow-up"></i> +0.3</span>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <span class="stat-number">236</span>
+            <span class="stat-label">Engagements</span>
+            <span class="stat-change negative"><i class="fas fa-arrow-down"></i> -2.1%</span>
+        </div>
+    </div>
+
+    <!-- Main Grid: Chart + Activity -->
+    <div class="main-grid">
+        <!-- Chart Card -->
+        <div class="chart-card">
+            <div class="card-title">
+                Sales Overview
+                <span>Last 7 days</span>
+            </div>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar" style="height: 60px;"></div>
+                    <span class="bar-label">Mon</span>
+                </div>
+                <div class="bar-item">
+                    <div class="bar" style="height: 85px;"></div>
+                    <span class="bar-label">Tue</span>
+                </div>
+                <div class="bar-item">
+                    <div class="bar" style="height: 45px;"></div>
+                    <span class="bar-label">Wed</span>
+                </div>
+                <div class="bar-item">
+                    <div class="bar" style="height: 110px;"></div>
+                    <span class="bar-label">Thu</span>
+                </div>
+                <div class="bar-item">
+                    <div class="bar" style="height: 70px;"></div>
+                    <span class="bar-label">Fri</span>
+                </div>
+                <div class="bar-item">
+                    <div class="bar" style="height: 140px;"></div>
+                    <span class="bar-label">Sat</span>
+                </div>
+                <div class="bar-item">
+                    <div class="bar" style="height: 95px;"></div>
+                    <span class="bar-label">Sun</span>
+                </div>
+            </div>
         </div>
 
-        <div class="menu-title">
-            MENU
+        <!-- Activity Card -->
+        <div class="activity-card">
+            <div class="card-title">Recent Activity</div>
+            <div class="activity-item">
+                <div class="activity-icon"><i class="fas fa-plus"></i></div>
+                <div class="activity-content">
+                    <div class="activity-text">New sale posted: "Summer Sale"</div>
+                    <div class="activity-time">2 hours ago</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon"><i class="fas fa-star"></i></div>
+                <div class="activity-content">
+                    <div class="activity-text">Received 5-star review</div>
+                    <div class="activity-time">4 hours ago</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon"><i class="fas fa-eye"></i></div>
+                <div class="activity-content">
+                    <div class="activity-text">Sale "Fashion Fest" reached 1k views</div>
+                    <div class="activity-time">Yesterday</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon"><i class="fas fa-tag"></i></div>
+                <div class="activity-content">
+                    <div class="activity-text">New discount code generated</div>
+                    <div class="activity-time">2 days ago</div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <nav>
-
-            <a href="dashboard.html" class="active">
-                <span>▦</span>
-                Dashboard
-            </a>
-
-            <a href="post-sale.html">
-                <span>＋</span>
-                Create Sale
-            </a>
-
-            <a href="shops.html">
-                <span>⌕</span>
-                Explore
-            </a>
-
-            <a href="#">
-                <span>♡</span>
-                Customers
-            </a>
-
-            <a href="#">
-                <span>◷</span>
-                Sale History
-            </a>
-
-        </nav>
-
-        <div class="sidebar-bottom">
-
-            <a href="profile.html">
-                <span>⚙</span>
-                Settings
-            </a>
-
-            <button onclick="logout()">
-                <span>↪</span>
-                Logout
-            </button>
-
+    <!-- Sales Table -->
+    <div class="table-card">
+        <div class="card-title">
+            Recent Sales
+            <a href="shop.html">View All <i class="fas fa-arrow-right"></i></a>
         </div>
-
-    </aside>
-
-
-    <!-- MAIN CONTENT -->
-
-    <main class="main">
-
-        <!-- TOP BAR -->
-
-        <header class="topbar">
-
-            <div class="mobile-brand">
-                SaleFinder
-            </div>
-
-            <div class="search-box">
-
-                <span>⌕</span>
-
-                <input
-                        type="text"
-                        id="search"
-                        placeholder="Search your sales..."
-                >
-
-            </div>
-
-            <div class="top-actions">
-
-                <button class="notification">
-                    🔔
-                    <span></span>
-                </button>
-
-                <div class="profile-mini">
-
-                    <div class="avatar">
-                        👤
-                    </div>
-
-                    <div>
-                        <strong id="userName">
-                            Shopkeeper
-                        </strong>
-
-                        <small>
-                            Shop Owner
-                        </small>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </header>
-
-
-        <!-- WELCOME -->
-
-        <section class="welcome">
-
-            <div>
-
-                <p class="small-heading">
-                    SHOPKEEPER DASHBOARD
-                </p>
-
-                <h1>
-                    Welcome back,
-                    <span id="welcomeName">
-                        Shopkeeper
-                    </span> 👋
-                </h1>
-
-                <p>
-                    Here's what's happening with your
-                    offers today.
-                </p>
-
-            </div>
-
-            <a
-                    href="post-sale.html"
-                    class="create-button">
-
-                <span>＋</span>
-                Create New Sale
-
-            </a>
-
-        </section>
-
-
-        <!-- STATS -->
-
-        <section class="stats">
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-icon purple">
-                        🏷️
-                    </div>
-
-                    <span class="trend positive">
-                        ↑ 12.5%
-                    </span>
-
-                </div>
-
-                <p>Total Sales</p>
-
-                <h2 id="totalSales">
-                    0
-                </h2>
-
-                <small>
-                    Offers posted
-                </small>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-icon green">
-                        🔥
-                    </div>
-
-                    <span class="status">
-                        ACTIVE
-                    </span>
-
-                </div>
-
-                <p>Active Offers</p>
-
-                <h2 id="activeSales">
-                    0
-                </h2>
-
-                <small>
-                    Currently running
-                </small>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-icon orange">
-                        👁️
-                    </div>
-
-                    <span class="trend positive">
-                        ↑ 8.4%
-                    </span>
-
-                </div>
-
-                <p>Total Views</p>
-
-                <h2 id="views">
-                    1,284
-                </h2>
-
-                <small>
-                    This month
-                </small>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-icon blue">
-                        ❤️
-                    </div>
-
-                    <span class="trend positive">
-                        ↑ 6.2%
-                    </span>
-
-                </div>
-
-                <p>Customer Interest</p>
-
-                <h2>
-                    326
-                </h2>
-
-                <small>
-                    Saved your offers
-                </small>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTENT GRID -->
-
-        <section class="content-grid">
-
-
-            <!-- SALES -->
-
-            <div class="sales-section">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <h2>
-                            Your Active Sales
-                        </h2>
-
-                        <p>
-                            Manage and monitor your current offers.
-                        </p>
-
-                    </div>
-
-                    <a href="post-sale.html">
-                        + Add Sale
-                    </a>
-
-                </div>
-
-
-                <div
-                        id="salesContainer"
-                        class="sales-container">
-
-                    <div class="loading">
-                        Loading your sales...
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- RIGHT PANEL -->
-
-            <aside class="right-panel">
-
-                <!-- PERFORMANCE -->
-
-                <div class="panel performance">
-
-                    <div class="panel-heading">
-
-                        <div>
-
-                            <h3>
-                                Performance
-                            </h3>
-
-                            <p>
-                                This month
-                            </p>
-
-                        </div>
-
-                        <span>⋮</span>
-
-                    </div>
-
-                    <div class="chart">
-
-                        <div class="chart-bars">
-
-                            <div style="height:35%"></div>
-                            <div style="height:48%"></div>
-                            <div style="height:42%"></div>
-                            <div style="height:65%"></div>
-                            <div style="height:55%"></div>
-                            <div style="height:78%"></div>
-                            <div style="height:68%"></div>
-                            <div style="height:88%"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="chart-info">
-
-                        <strong>
-                            +24.8%
-                        </strong>
-
-                        <span>
-                            compared to last month
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- QUICK ACTIONS -->
-
-                <div class="panel">
-
-                    <h3>
-                        Quick Actions
-                    </h3>
-
-                    <div class="quick-actions">
-
-                        <a href="post-sale.html">
-
-                            <div>
-                                ➕
-                            </div>
-
-                            <span>
-                                Create Sale
-                            </span>
-
-                        </a>
-
-                        <a href="shops.html">
-
-                            <div>
-                                👁️
-                            </div>
-
-                            <span>
-                                View Store
-                            </span>
-
-                        </a>
-
-                        <a href="#">
-
-                            <div>
-                                📊
-                            </div>
-
-                            <span>
-                                Analytics
-                            </span>
-
-                        </a>
-
-                        <a href="profile.html">
-
-                            <div>
-                                ⚙️
-                            </div>
-
-                            <span>
-                                Settings
-                            </span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </aside>
-
-        </section>
-
-    </main>
-
-</div>
-
-
-<script src="dashboard.js"></script>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sale</th>
+                    <th>Store</th>
+                    <th>Discount</th>
+                    <th>Status</th>
+                    <th>Views</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Summer Style</strong></td>
+                    <td>Zara</td>
+                    <td>-40%</td>
+                    <td><span class="status active">Active</span></td>
+                    <td>2.4k</td>
+                </tr>
+                <tr>
+                    <td><strong>Tech Fest</strong></td>
+                    <td>Best Buy</td>
+                    <td>-25%</td>
+                    <td><span class="status active">Active</span></td>
+                    <td>1.8k</td>
+                </tr>
+                <tr>
+                    <td><strong>Book Lovers</strong></td>
+                    <td>Barnes</td>
+                    <td>-15%</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td>890</td>
+                </tr>
+                <tr>
+                    <td><strong>Home & Living</strong></td>
+                    <td>IKEA</td>
+                    <td>-30%</td>
+                    <td><span class="status expired">Expired</span></td>
+                    <td>3.2k</td>
+                </tr>
+                <tr>
+                    <td><strong>Sports Gear</strong></td>
+                    <td>Nike</td>
+                    <td>-20%</td>
+                    <td><span class="status active">Active</span></td>
+                    <td>1.5k</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
 
 </body>
-
 </html>
