@@ -2,74 +2,100 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
 
     <title>SaleFinder | Dashboard</title>
 
-    <link rel="stylesheet" href="dashboard.css">
+    <link
+            rel="stylesheet"
+            href="css/dashboard.css"
+    >
 
     <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet">
+            rel="stylesheet"
+    >
+
 </head>
 
 <body>
 
-<div class="dashboard">
+<div class="app">
 
     <!-- SIDEBAR -->
 
     <aside class="sidebar">
 
-        <div class="brand">
-            <div class="brand-icon">S</div>
-            <span>SaleFinder</span>
-        </div>
+        <a href="index.html" class="logo">
 
-        <div class="menu-title">
-            MENU
-        </div>
+            <span class="logo-box">S</span>
 
-        <nav>
+            <span>
+                Sale<span class="purple">Finder</span>
+            </span>
 
-            <a href="dashboard.html" class="active">
-                <span>▦</span>
+        </a>
+
+
+        <p class="menu-label">
+            MAIN MENU
+        </p>
+
+
+        <nav class="navigation">
+
+            <a
+                    href="dashboard.html"
+                    class="nav-item active"
+            >
+                <span>⌂</span>
                 Dashboard
             </a>
 
-            <a href="post-sale.html">
+
+            <a
+                    href="post-sale.html"
+                    class="nav-item"
+            >
                 <span>＋</span>
-                Create Sale
+                Post a Sale
             </a>
 
-            <a href="shops.html">
+
+            <a
+                    href="explore.html"
+                    class="nav-item"
+            >
                 <span>⌕</span>
-                Explore
+                Explore Sales
             </a>
 
-            <a href="#">
-                <span>♡</span>
-                Customers
-            </a>
 
-            <a href="#">
-                <span>◷</span>
-                Sale History
+            <a
+                    href="profile.html"
+                    class="nav-item"
+            >
+                <span>♙</span>
+                My Profile
             </a>
 
         </nav>
 
+
         <div class="sidebar-bottom">
 
             <a href="profile.html">
-                <span>⚙</span>
-                Settings
+                ⚙️ Settings
             </a>
 
             <button onclick="logout()">
-                <span>↪</span>
-                Logout
+                ↪ Logout
             </button>
 
         </div>
@@ -77,7 +103,7 @@
     </aside>
 
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
 
     <main class="main">
 
@@ -85,36 +111,43 @@
 
         <header class="topbar">
 
-            <div class="mobile-brand">
+            <div class="mobile-logo">
                 SaleFinder
             </div>
 
-            <div class="search-box">
+
+            <div class="search">
 
                 <span>⌕</span>
 
                 <input
                         type="text"
-                        id="search"
+                        id="searchInput"
                         placeholder="Search your sales..."
                 >
 
             </div>
 
-            <div class="top-actions">
+
+            <div class="user-area">
 
                 <button class="notification">
                     🔔
-                    <span></span>
+                    <i></i>
                 </button>
 
-                <div class="profile-mini">
+
+                <a
+                        href="profile.html"
+                        class="user"
+                >
 
                     <div class="avatar">
                         👤
                     </div>
 
-                    <div>
+                    <div class="user-text">
+
                         <strong id="userName">
                             Shopkeeper
                         </strong>
@@ -122,9 +155,10 @@
                         <small>
                             Shop Owner
                         </small>
+
                     </div>
 
-                </div>
+                </a>
 
             </div>
 
@@ -137,7 +171,7 @@
 
             <div>
 
-                <p class="small-heading">
+                <p class="eyebrow">
                     SHOPKEEPER DASHBOARD
                 </p>
 
@@ -145,22 +179,26 @@
                     Welcome back,
                     <span id="welcomeName">
                         Shopkeeper
-                    </span> 👋
+                    </span>
+                    👋
                 </h1>
 
                 <p>
-                    Here's what's happening with your
-                    offers today.
+                    Manage your offers and reach more
+                    customers around you.
                 </p>
 
             </div>
 
+
             <a
                     href="post-sale.html"
-                    class="create-button">
+                    class="primary-btn"
+            >
 
                 <span>＋</span>
-                Create New Sale
+
+                Post New Sale
 
             </a>
 
@@ -169,143 +207,120 @@
 
         <!-- STATS -->
 
-        <section class="stats">
+        <section class="stats-grid">
 
-            <div class="stat-card">
+            <div class="stat">
 
-                <div class="stat-top">
-
-                    <div class="stat-icon purple">
-                        🏷️
-                    </div>
-
-                    <span class="trend positive">
-                        ↑ 12.5%
-                    </span>
-
+                <div class="stat-icon purple-bg">
+                    🏷️
                 </div>
 
-                <p>Total Sales</p>
+                <div>
 
-                <h2 id="totalSales">
-                    0
-                </h2>
+                    <span>
+                        Total Sales
+                    </span>
 
-                <small>
-                    Offers posted
-                </small>
+                    <h2 id="totalSales">
+                        0
+                    </h2>
+
+                </div>
 
             </div>
 
 
-            <div class="stat-card">
+            <div class="stat">
 
-                <div class="stat-top">
-
-                    <div class="stat-icon green">
-                        🔥
-                    </div>
-
-                    <span class="status">
-                        ACTIVE
-                    </span>
-
+                <div class="stat-icon green-bg">
+                    🔥
                 </div>
 
-                <p>Active Offers</p>
+                <div>
 
-                <h2 id="activeSales">
-                    0
-                </h2>
+                    <span>
+                        Active Offers
+                    </span>
 
-                <small>
-                    Currently running
-                </small>
+                    <h2 id="activeSales">
+                        0
+                    </h2>
+
+                </div>
 
             </div>
 
 
-            <div class="stat-card">
+            <div class="stat">
 
-                <div class="stat-top">
-
-                    <div class="stat-icon orange">
-                        👁️
-                    </div>
-
-                    <span class="trend positive">
-                        ↑ 8.4%
-                    </span>
-
+                <div class="stat-icon blue-bg">
+                    👁️
                 </div>
 
-                <p>Total Views</p>
+                <div>
 
-                <h2 id="views">
-                    1,284
-                </h2>
+                    <span>
+                        Total Views
+                    </span>
 
-                <small>
-                    This month
-                </small>
+                    <h2>
+                        1,284
+                    </h2>
+
+                </div>
 
             </div>
 
 
-            <div class="stat-card">
+            <div class="stat">
 
-                <div class="stat-top">
-
-                    <div class="stat-icon blue">
-                        ❤️
-                    </div>
-
-                    <span class="trend positive">
-                        ↑ 6.2%
-                    </span>
-
+                <div class="stat-icon orange-bg">
+                    ❤️
                 </div>
 
-                <p>Customer Interest</p>
+                <div>
 
-                <h2>
-                    326
-                </h2>
+                    <span>
+                        Saved Offers
+                    </span>
 
-                <small>
-                    Saved your offers
-                </small>
+                    <h2>
+                        326
+                    </h2>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- CONTENT GRID -->
+        <!-- CONTENT -->
 
-        <section class="content-grid">
+        <section class="dashboard-grid">
 
 
             <!-- SALES -->
 
-            <div class="sales-section">
+            <div class="sales-area">
 
-                <div class="section-header">
+                <div class="section-title">
 
                     <div>
 
                         <h2>
-                            Your Active Sales
+                            Your Sales
                         </h2>
 
                         <p>
-                            Manage and monitor your current offers.
+                            Recently posted offers
                         </p>
 
                     </div>
 
-                    <a href="post-sale.html">
-                        + Add Sale
+
+                    <a href="explore.html">
+                        View all →
                     </a>
 
                 </div>
@@ -313,10 +328,11 @@
 
                 <div
                         id="salesContainer"
-                        class="sales-container">
+                        class="sales-grid"
+                >
 
                     <div class="loading">
-                        Loading your sales...
+                        Loading sales...
                     </div>
 
                 </div>
@@ -324,15 +340,42 @@
             </div>
 
 
-            <!-- RIGHT PANEL -->
+            <!-- SIDE -->
 
-            <aside class="right-panel">
+            <aside class="side-content">
+
+
+                <!-- QUICK ACTION -->
+
+                <div class="glass-card">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                    <a href="post-sale.html">
+                        <span>＋</span>
+                        Create Sale
+                    </a>
+
+                    <a href="explore.html">
+                        <span>⌕</span>
+                        Explore Offers
+                    </a>
+
+                    <a href="profile.html">
+                        <span>⚙</span>
+                        Manage Profile
+                    </a>
+
+                </div>
+
 
                 <!-- PERFORMANCE -->
 
-                <div class="panel performance">
+                <div class="glass-card performance">
 
-                    <div class="panel-heading">
+                    <div class="performance-head">
 
                         <div>
 
@@ -340,110 +383,33 @@
                                 Performance
                             </h3>
 
-                            <p>
+                            <small>
                                 This month
-                            </p>
+                            </small>
 
                         </div>
-
-                        <span>⋮</span>
-
-                    </div>
-
-                    <div class="chart">
-
-                        <div class="chart-bars">
-
-                            <div style="height:35%"></div>
-                            <div style="height:48%"></div>
-                            <div style="height:42%"></div>
-                            <div style="height:65%"></div>
-                            <div style="height:55%"></div>
-                            <div style="height:78%"></div>
-                            <div style="height:68%"></div>
-                            <div style="height:88%"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="chart-info">
-
-                        <strong>
-                            +24.8%
-                        </strong>
 
                         <span>
-                            compared to last month
+                            +24.8%
                         </span>
 
                     </div>
 
-                </div>
 
+                    <div class="chart">
 
-                <!-- QUICK ACTIONS -->
-
-                <div class="panel">
-
-                    <h3>
-                        Quick Actions
-                    </h3>
-
-                    <div class="quick-actions">
-
-                        <a href="post-sale.html">
-
-                            <div>
-                                ➕
-                            </div>
-
-                            <span>
-                                Create Sale
-                            </span>
-
-                        </a>
-
-                        <a href="shops.html">
-
-                            <div>
-                                👁️
-                            </div>
-
-                            <span>
-                                View Store
-                            </span>
-
-                        </a>
-
-                        <a href="#">
-
-                            <div>
-                                📊
-                            </div>
-
-                            <span>
-                                Analytics
-                            </span>
-
-                        </a>
-
-                        <a href="profile.html">
-
-                            <div>
-                                ⚙️
-                            </div>
-
-                            <span>
-                                Settings
-                            </span>
-
-                        </a>
+                        <div style="height:35%"></div>
+                        <div style="height:55%"></div>
+                        <div style="height:42%"></div>
+                        <div style="height:70%"></div>
+                        <div style="height:58%"></div>
+                        <div style="height:80%"></div>
+                        <div style="height:68%"></div>
+                        <div style="height:90%"></div>
 
                     </div>
 
                 </div>
-
 
             </aside>
 
@@ -454,7 +420,7 @@
 </div>
 
 
-<script src="dashboard.js"></script>
+<script src="js/dashboard.js"></script>
 
 </body>
 

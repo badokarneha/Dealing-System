@@ -5,99 +5,71 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Sale Details - SaleFinder</title>
+    <title>
+        Sale Details | SaleFinder
+    </title>
 
-    <link rel="stylesheet"
-          href="sale-details.css">
+    <link
+            rel="stylesheet"
+            href="css/sale-details.css"
+    >
 
 </head>
 
+
 <body>
 
-<header>
 
-    <div class="logo">
+<header class="navbar">
+
+    <a
+            href="index.html"
+            class="logo"
+    >
+
+        <span class="logo-box">
+            S
+        </span>
+
         Sale<span>Finder</span>
-    </div>
 
-    <a href="index.html">← Back to Home</a>
+    </a>
+
+
+    <nav>
+
+        <a href="explore.html">
+            Explore
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a
+                href="post-sale.html"
+                class="nav-button"
+        >
+            Post Sale
+        </a>
+
+    </nav>
 
 </header>
 
 
-<main>
 
-    <div class="sale-container">
+<main class="page">
 
-        <div class="sale-image">
-            🛍️
-        </div>
+    <div id="sale">
 
-        <div class="sale-content">
-
-            <span class="discount">
-                50% OFF
-            </span>
-
-            <h1>
-                Mega Fashion Sale
-            </h1>
-
-            <h2>
-                Trendy Fashion Store
-            </h2>
-
-            <p class="location">
-                📍 Main Market, Shegaon
-            </p>
-
-            <p class="description">
-
-                Get amazing discounts on men's,
-                women's and kids' fashion.
-
-                Limited time offer. Visit the store
-                and grab your favourite products
-                before the sale ends!
-
-            </p>
-
-
-            <div class="details">
-
-                <div>
-                    <strong>📅 Sale Starts</strong>
-                    <p>25 August 2026</p>
-                </div>
-
-                <div>
-                    <strong>⏰ Sale Ends</strong>
-                    <p>31 August 2026</p>
-                </div>
-
-                <div>
-                    <strong>🏷️ Category</strong>
-                    <p>Fashion</p>
-                </div>
-
-            </div>
-
-
-            <button onclick="showMessage()">
-                Get Directions
-            </button>
-
-            <button
-                    class="save"
-                    onclick="saveSale()">
-
-                ❤️ Save Sale
-
-            </button>
-
+        <div class="loading">
+            Loading sale...
         </div>
 
     </div>
@@ -105,7 +77,7 @@
 </main>
 
 
-<script src="sale-details.js"></script>
+<script src="js/sale-details.js"></script>
 
 </body>
 

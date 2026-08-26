@@ -1,9 +1,7 @@
 const API = "http://127.0.0.1:8000";
 
 
-// ============================
-// GET LOGGED-IN USER
-// ============================
+// GET USER
 
 const user =
     JSON.parse(
@@ -11,7 +9,6 @@ const user =
     );
 
 
-// If user is not logged in
 if (!user) {
 
     window.location.href =
@@ -20,20 +17,19 @@ if (!user) {
 }
 
 
-// ============================
-// SHOW USER NAME
-// ============================
+// USER NAME
 
-document.getElementById("userName")
-    .textContent = user.name;
-
-document.getElementById("welcomeName")
-    .textContent = user.name;
+document.getElementById(
+    "userName"
+).textContent = user.name;
 
 
-// ============================
+document.getElementById(
+    "welcomeName"
+).textContent = user.name;
+
+
 // LOAD SALES
-// ============================
 
 async function loadSales() {
 
@@ -48,7 +44,7 @@ async function loadSales() {
         if (!response.ok) {
 
             throw new Error(
-                "Unable to fetch sales"
+                "Unable to load sales"
             );
 
         }
@@ -58,8 +54,7 @@ async function loadSales() {
             await response.json();
 
 
-        displaySales(sales);
-
+        renderSales(sales);
 
         updateStats(sales);
 
@@ -74,13 +69,12 @@ async function loadSales() {
 
             <div class="loading">
 
-                <h3>
-                    Unable to load sales
-                </h3>
+                Unable to connect
+                to the server.
 
-                <p>
-                    Make sure your backend is running.
-                </p>
+                <br><br>
+
+                Make sure FastAPI is running.
 
             </div>
 
@@ -91,11 +85,9 @@ async function loadSales() {
 }
 
 
-// ============================
-// DISPLAY SALES
-// ============================
+// RENDER
 
-function displaySales(sales) {
+function renderSales(sales) {
 
     const container =
         document.getElementById(
@@ -103,32 +95,20 @@ function displaySales(sales) {
         );
 
 
-    if (sales.length === 0) {
+    if (!sales.length) {
 
         container.innerHTML = `
 
             <div class="loading">
 
                 <h3>
-                    No sales posted yet 🎯
+                    No sales yet 🎯
                 </h3>
-
-                <p>
-                    Create your first offer and
-                    start attracting customers.
-                </p>
 
                 <br>
 
-                <a
-                    href="post-sale.html"
-                    style="
-                    color:#6c4df6;
-                    text-decoration:none;
-                    font-weight:600;
-                    "
-                >
-                    + Create Sale
+                <a href="post-sale.html">
+                    Create your first sale →
                 </a>
 
             </div>
@@ -140,144 +120,135 @@ function displaySales(sales) {
     }
 
 
-    container.innerHTML = "";
+    container.innerHTML =
+        sales.map(
+            (sale, index) => `
+
+        <div class="sale-card">
+
+            <div class="
+                sale-image
+                ${index % 2
+                ? "green"
+                : ""}
+            ">
+
+                <div class="discount">
+                    ${sale.discount}% OFF
+                </div>
+
+                <span class="active">
+                    ACTIVE
+                </span>
+
+            </div>
 
 
-    sales.forEach((sale, index) => {
+            <div class="sale-info">
 
-        const bannerClass =
-            index % 2 === 0
-                ? ""
-                : "green-banner";
+                <h3>
+                    ${escapeHTML(
+                sale.title
+            )}
+                </h3>
+
+                <p class="shop">
+                    ${escapeHTML(
+                sale.shop_name
+            )}
+                </p>
 
 
-        container.innerHTML += `
+                <div class="sale-meta">
 
-            <div class="sale-card">
+                    <span>
+                        📍
+                        ${escapeHTML(
+                sale.location
+            )}
+                    </span>
 
-                <div
-                    class="sale-banner
-                    ${bannerClass}"
-                >
-
-                    <div class="discount">
-                        ${sale.discount}% OFF
-                    </div>
-
-                    <span class="sale-label">
-                        ACTIVE
+                    <span>
+                        Until
+                        ${sale.end_date}
                     </span>
 
                 </div>
 
 
-                <div class="sale-body">
+                <div class="card-buttons">
 
-                    <h3>
-                        ${escapeHTML(sale.title)}
-                    </h3>
+                    <button
+                        class="view"
+                        onclick="
+                        viewSale(${sale.id})
+                        "
+                    >
+                        View Details
+                    </button>
 
-                    <p class="shop-name">
-                        ${escapeHTML(
-            sale.shop_name
-        )}
-                    </p>
-
-
-                    <div class="sale-meta">
-
-                        <span>
-                            📍
-                            ${escapeHTML(
-            sale.location
-        )}
-                        </span>
-
-                        <span>
-                            📅
-                            ${sale.end_date}
-                        </span>
-
-                    </div>
-
-
-                    <div class="sale-actions">
-
-                        <button
-                            onclick="viewSale(${sale.id})"
-                            class="view"
-                        >
-                            View
-                        </button>
-
-                        <button
-                            onclick="shareSale(
-                                '${escapeJS(sale.title)}',
-                                ${sale.id}
-                            )"
-                        >
-                            Share
-                        </button>
-
-                    </div>
+                    <button
+                        onclick="
+                        shareSale(${sale.id})
+                        "
+                    >
+                        Share
+                    </button>
 
                 </div>
 
             </div>
 
-        `;
+        </div>
 
-    });
+    `
+        ).join("");
 
 }
 
 
-// ============================
-// UPDATE STATISTICS
-// ============================
+// STATS
 
 function updateStats(sales) {
 
     document.getElementById(
         "totalSales"
-    ).textContent = sales.length;
+    ).textContent =
+        sales.length;
 
 
     const today =
         new Date();
 
 
-    const activeSales =
-        sales.filter(sale => {
-
-            const end =
-                new Date(sale.end_date);
-
-            return end >= today;
-
-        });
+    const active =
+        sales.filter(
+            sale =>
+                new Date(
+                    sale.end_date
+                ) >= today
+        );
 
 
     document.getElementById(
         "activeSales"
     ).textContent =
-        activeSales.length;
+        active.length;
 
 }
 
 
-// ============================
 // SEARCH
-// ============================
 
 document
-    .getElementById("search")
+    .getElementById("searchInput")
     .addEventListener(
         "input",
         function () {
 
-            const keyword =
-                this.value.toLowerCase();
+            const value =
+                this.value
+                    .toLowerCase();
 
 
             document
@@ -286,13 +257,10 @@ document
                 )
                 .forEach(card => {
 
-                    const text =
-                        card.textContent
-                            .toLowerCase();
-
-
                     card.style.display =
-                        text.includes(keyword)
+                        card.textContent
+                            .toLowerCase()
+                            .includes(value)
                             ? ""
                             : "none";
 
@@ -302,9 +270,7 @@ document
     );
 
 
-// ============================
-// VIEW SALE
-// ============================
+// VIEW
 
 function viewSale(id) {
 
@@ -314,24 +280,21 @@ function viewSale(id) {
 }
 
 
-// ============================
-// SHARE SALE
-// ============================
+// SHARE
 
-async function shareSale(title, id) {
+async function shareSale(id) {
 
     const url =
-        `${window.location.origin}/sale-details.html?id=${id}`;
+        `${window.location.origin}`
+        + `/sale-details.html?id=${id}`;
 
 
     if (navigator.share) {
 
         await navigator.share({
 
-            title: title,
-
-            text:
-                `Check out this amazing sale: ${title}`,
+            title:
+                "Amazing Sale on SaleFinder",
 
             url: url
 
@@ -339,9 +302,8 @@ async function shareSale(title, id) {
 
     } else {
 
-        await navigator.clipboard.writeText(
-            url
-        );
+        await navigator.clipboard
+            .writeText(url);
 
         alert(
             "Sale link copied!"
@@ -352,9 +314,7 @@ async function shareSale(title, id) {
 }
 
 
-// ============================
 // LOGOUT
-// ============================
 
 function logout() {
 
@@ -366,34 +326,25 @@ function logout() {
 }
 
 
-// ============================
-// SECURITY HELPERS
-// ============================
+// SECURITY
 
 function escapeHTML(value) {
 
     return String(value)
+
         .replaceAll("&", "&amp;")
+
         .replaceAll("<", "&lt;")
+
         .replaceAll(">", "&gt;")
+
         .replaceAll('"', "&quot;")
+
         .replaceAll("'", "&#039;");
 
 }
 
 
-function escapeJS(value) {
-
-    return String(value)
-        .replaceAll("\\", "\\\\")
-        .replaceAll("'", "\\'")
-        .replaceAll("\n", " ");
-
-}
-
-
-// ============================
 // START
-// ============================
 
 loadSales();
