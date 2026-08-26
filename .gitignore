@@ -1,18 +1,6 @@
-# Python
+.env
 __pycache__/
 *.pyc
-*.pyo
-
-# SQLite database
 *.db
-*.sqlite3
-
-# Environment files
-.env
-
-# Virtual environment
-venv/
-.venv/
-
-# VS Code
-.vscode/
+*.sqlite
+*.sqlite3.venv/

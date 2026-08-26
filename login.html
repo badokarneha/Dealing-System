@@ -16,38 +16,115 @@
 
         <h1>SaleFinder</h1>
 
-        <input
-            id="name"
-            type="text"
-            placeholder="Name"
-        >
+        <p class="subtitle">Find the best deals around you</p>
 
-        <input
-            id="email"
-            type="email"
-            placeholder="Email"
-        >
 
-        <input
-            id="password"
-            type="password"
-            placeholder="Password"
-        >
+        <!-- ==============================
+             LOGIN FORM
+        =============================== -->
 
-        <select id="role">
-            <option value="customer">Customer</option>
-            <option value="shopkeeper">Shopkeeper</option>
-        </select>
+        <div id="loginForm">
 
-        <button type="button" onclick="register()">
-            Create Account
-        </button>
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="Email"
+                autocomplete="email"
+            >
 
-        <hr>
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Password"
+                autocomplete="current-password"
+            >
 
-        <button type="button" onclick="login()">
-            Login
-        </button>
+            <button
+                type="button"
+                onclick="login()"
+            >
+                Login
+            </button>
+
+            <p class="switch-text">
+                Don't have an account?
+                <button
+                    type="button"
+                    class="link-button"
+                    onclick="showRegister()"
+                >
+                    Create Account
+                </button>
+            </p>
+
+        </div>
+
+
+        <!-- ==============================
+             REGISTER FORM
+        =============================== -->
+
+        <div id="registerForm" style="display: none;">
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Name"
+                autocomplete="name"
+            >
+
+            <input
+                id="email"
+                type="email"
+                placeholder="Email"
+                autocomplete="email"
+            >
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                autocomplete="new-password"
+            >
+
+            <input
+                id="phone"
+                type="tel"
+                placeholder="Phone Number"
+                autocomplete="tel"
+            >
+
+            <input
+                id="city"
+                type="text"
+                placeholder="City"
+                autocomplete="address-level2"
+            >
+
+            <select id="role">
+                <option value="customer">Customer</option>
+                <option value="shopkeeper">Shopkeeper</option>
+            </select>
+
+            <button
+                type="button"
+                onclick="register()"
+            >
+                Create Account
+            </button>
+
+            <p class="switch-text">
+                Already have an account?
+                <button
+                    type="button"
+                    class="link-button"
+                    onclick="showLogin()"
+                >
+                    Login
+                </button>
+            </p>
+
+        </div>
 
     </div>
 

@@ -1,78 +1,16 @@
-<<<<<<< HEAD
-=======
-/* =========================================
-   SaleFinder - Dark Purple Login
-========================================= */
-
->>>>>>> index
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
 body {
-<<<<<<< HEAD
-    background: #faf9fe;
-    color: #1a1a2e;
-    line-height: 1.6;
-}
-
-header {
-    height: 80px;
-=======
     min-height: 100vh;
-
->>>>>>> index
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    justify-content: space-between;
-    padding: 0 7%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(108, 77, 246, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #6c4df6, #a78bfa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.logo span {
-    background: none;
-    -webkit-text-fill-color: #6c4df6;
-    color: #6c4df6;
-}
-
-nav {
-    display: flex;
-    gap: 35px;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #4a4a6a;
-    font-weight: 500;
-    font-size: 15px;
-    transition: color 0.3s ease;
-    position: relative;
-=======
-
+    justify-content: center;
     padding: 30px;
-
-    font-family: "Inter", "Segoe UI", Arial, sans-serif;
 
     color: #ffffff;
 
@@ -95,18 +33,11 @@ nav a {
         );
 
     position: relative;
-
     overflow: hidden;
 }
 
-
-/* =========================================
-   Animated Background Glow
-========================================= */
-
 body::before {
     content: "";
-
     position: fixed;
 
     width: 380px;
@@ -118,18 +49,13 @@ body::before {
     border-radius: 50%;
 
     background: rgba(124, 92, 255, 0.14);
-
     filter: blur(80px);
 
     pointer-events: none;
-
-    animation: glowOne 10s ease-in-out infinite;
 }
-
 
 body::after {
     content: "";
-
     position: fixed;
 
     width: 400px;
@@ -141,22 +67,13 @@ body::after {
     border-radius: 50%;
 
     background: rgba(147, 51, 234, 0.13);
-
     filter: blur(90px);
 
     pointer-events: none;
-
-    animation: glowTwo 12s ease-in-out infinite;
 }
-
-
-/* =========================================
-   Login Card
-========================================= */
 
 .box {
     width: 430px;
-
     max-width: 100%;
 
     padding: 45px 42px;
@@ -164,7 +81,6 @@ body::after {
     background: rgba(20, 18, 29, 0.94);
 
     border: 1px solid rgba(139, 92, 246, 0.18);
-
     border-radius: 24px;
 
     box-shadow:
@@ -172,32 +88,10 @@ body::after {
         0 0 40px rgba(124, 92, 255, 0.06);
 
     position: relative;
-
     z-index: 1;
 
     animation: cardEntry 0.7s ease;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
 }
-
-
-.box:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(139, 92, 246, 0.45);
-
-    box-shadow:
-        0 35px 90px rgba(0, 0, 0, 0.65),
-        0 0 45px rgba(124, 92, 255, 0.12);
-}
-
-
-/* =========================================
-   Purple Top Line
-========================================= */
 
 .box::before {
     content: "";
@@ -205,7 +99,6 @@ body::after {
     position: absolute;
 
     top: 0;
-
     left: 12%;
     right: 12%;
 
@@ -221,36 +114,16 @@ body::after {
     );
 }
 
-
-/* =========================================
-   Heading
-========================================= */
-
 .box h1 {
     text-align: center;
 
     font-size: 34px;
-
     font-weight: 800;
-
-    letter-spacing: -1px;
 
     margin-bottom: 35px;
 
     color: #ffffff;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
 }
-
-
-.box:hover h1 {
-    color: #a78bfa;
-
-    transform: translateY(-1px);
-}
-
 
 .box h1::after {
     content: "Find the best deals around you";
@@ -260,63 +133,35 @@ body::after {
     margin-top: 10px;
 
     font-size: 13px;
-
     font-weight: 400;
-
-    letter-spacing: 0;
 
     color: #85818f;
 }
 
-
-/* =========================================
-   Inputs
-========================================= */
-
 input,
 select {
     width: 100%;
-
     height: 54px;
 
     padding: 0 17px;
-
     margin: 8px 0;
 
     border: 1px solid #2d2938;
-
     border-radius: 12px;
 
     background: #111019;
-
     color: #ffffff;
 
     font-size: 14px;
 
-    font-family: inherit;
-
     outline: none;
 
-    transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+    transition: 0.25s ease;
 }
-
 
 input::placeholder {
     color: #77727f;
 }
-
-
-input:hover,
-select:hover {
-    border-color: #6845b5;
-
-    background: #15121f;
-}
-
 
 input:focus,
 select:focus {
@@ -324,114 +169,46 @@ select:focus {
 
     background: #15121f;
 
-    transform: translateY(-1px);
-
     box-shadow:
-        0 0 0 4px rgba(139, 92, 246, 0.12),
-        0 8px 25px rgba(124, 58, 237, 0.10);
+        0 0 0 4px rgba(139, 92, 246, 0.12);
 }
-
-
-/* =========================================
-   Select
-========================================= */
 
 select {
     cursor: pointer;
-
-    appearance: none;
-
-    background-image:
-        linear-gradient(
-            45deg,
-            transparent 50%,
-            #a78bfa 50%
-        ),
-        linear-gradient(
-            135deg,
-            #a78bfa 50%,
-            transparent 50%
-        );
-
-    background-position:
-        calc(100% - 18px) 22px,
-        calc(100% - 13px) 22px;
-
-    background-size:
-        5px 5px,
-        5px 5px;
-
-    background-repeat: no-repeat;
 }
-
-
-/* =========================================
-   Main Button
-========================================= */
 
 button {
     width: 100%;
-
     height: 54px;
 
     margin-top: 15px;
 
-    padding: 0 18px;
-
     border: 1px solid transparent;
-
     border-radius: 12px;
 
     background: #7c3aed;
-
     color: #ffffff;
 
-    font-family: inherit;
-
     font-size: 15px;
-
     font-weight: 600;
 
     cursor: pointer;
 
-    box-shadow:
-        0 10px 25px rgba(124, 58, 237, 0.20);
-
-    transition:
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+    transition: 0.25s ease;
 }
-
-
-/* Purple Hover */
 
 button:hover {
     background: #9333ea;
 
-    transform: translateY(-3px);
-
-    border-color: #a855f7;
+    transform: translateY(-2px);
 
     box-shadow:
         0 15px 35px rgba(147, 51, 234, 0.35);
 }
 
-
-/* Click */
-
 button:active {
     transform: translateY(0);
-
-    box-shadow:
-        0 7px 18px rgba(124, 58, 237, 0.25);
 }
-
-
-/* =========================================
-   Divider
-========================================= */
 
 hr {
     border: none;
@@ -443,11 +220,6 @@ hr {
     margin: 27px 0 17px;
 }
 
-
-/* =========================================
-   Login Button
-========================================= */
-
 hr + button {
     background: transparent;
 
@@ -458,437 +230,33 @@ hr + button {
     box-shadow: none;
 }
 
-
 hr + button:hover {
     background: #7c3aed;
 
     color: #ffffff;
 
     border-color: #a855f7;
-
-    box-shadow:
-        0 12px 28px rgba(124, 58, 237, 0.30);
 }
 
-
-/* =========================================
-   Card Animation
-========================================= */
-
 @keyframes cardEntry {
-
     from {
         opacity: 0;
-
-        transform:
-            translateY(35px)
-            scale(0.96);
+        transform: translateY(35px) scale(0.96);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
->>>>>>> index
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #6c4df6;
-    transition: width 0.3s ease;
-    border-radius: 4px;
-}
-
-<<<<<<< HEAD
-nav a:hover {
-    color: #6c4df6;
-}
-=======
-/* =========================================
-   Background Animations
-========================================= */
-
-@keyframes glowOne {
-
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(60px, 40px);
-    }
-
-    100% {
-        transform: translate(0, 0);
+        transform: translateY(0) scale(1);
     }
 }
 
-
-@keyframes glowTwo {
-
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-50px, -35px);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-
-/* =========================================
-   Mobile
-========================================= */
->>>>>>> index
-
-nav a:hover::after {
-    width: 100%;
-}
-
-<<<<<<< HEAD
-.login {
-    text-decoration: none;
-    background: linear-gradient(135deg, #6c4df6, #7c5cfc);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(108, 77, 246, 0.3);
-}
-
-.login:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(108, 77, 246, 0.4);
-}
-
-.hero {
-    min-height: 560px;
-    padding: 80px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(108, 77, 246, 0.06), transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.hero-text {
-    max-width: 600px;
-    position: relative;
-    z-index: 1;
-}
-
-.tag {
-    color: #6c4df6;
-    font-weight: 700;
-    letter-spacing: 3px;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: inline-block;
-    background: rgba(108, 77, 246, 0.08);
-    padding: 6px 18px;
-    border-radius: 50px;
-}
-
-h1 {
-    font-size: 68px;
-    line-height: 1.08;
-    margin: 24px 0 20px;
-    font-weight: 800;
-    letter-spacing: -2px;
-}
-
-h1 span {
-    background: linear-gradient(135deg, #6c4df6, #a78bfa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-text > p {
-    color: #6b6b8a;
-    font-size: 19px;
-    line-height: 1.7;
-    max-width: 480px;
-}
-
-.buttons {
-    display: flex;
-    gap: 16px;
-    margin-top: 36px;
-    flex-wrap: wrap;
-}
-
-.primary,
-.secondary {
-    padding: 16px 32px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease;
-}
-
-.primary {
-    background: linear-gradient(135deg, #6c4df6, #7c5cfc);
-    color: white;
-    box-shadow: 0 4px 20px rgba(108, 77, 246, 0.35);
-}
-
-.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(108, 77, 246, 0.45);
-}
-
-.secondary {
-    border: 2px solid #e8e7f0;
-    color: #4a4a6a;
-    background: white;
-}
-
-.secondary:hover {
-    border-color: #6c4df6;
-    color: #6c4df6;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-}
-
-.hero-card {
-    width: 340px;
-    height: 380px;
-    background: linear-gradient(145deg, #7a5cff, #4a2fc0);
-    color: white;
-    padding: 40px 35px;
-    border-radius: 32px;
-    box-shadow: 0 40px 80px rgba(108, 77, 246, 0.35);
-    position: relative;
-    z-index: 1;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    flex-shrink: 0;
-}
-
-.hero-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 50px 100px rgba(108, 77, 246, 0.4);
-}
-
-.sale-badge {
-    background: rgba(255, 255, 255, 0.95);
-    color: #6c4df6;
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-}
-
-.hero-card h2 {
-    margin-top: 70px;
-    font-size: 38px;
-    font-weight: 800;
-    line-height: 1.1;
-}
-
-.hero-card h2 small {
-    display: block;
-    font-size: 18px;
-    font-weight: 400;
-    opacity: 0.8;
-    margin-top: 8px;
-}
-
-.offer {
-    margin-top: 28px;
-    font-size: 15px;
-    opacity: 0.9;
-}
-
-.offer strong {
-    font-size: 28px;
-    display: block;
-    margin-bottom: 4px;
-}
-
-.section {
-    padding: 70px 8%;
-}
-
-.section h2 {
-    margin-bottom: 40px;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: #1a1a2e;
-}
-
-.section h2 span {
-    color: #6c4df6;
-}
-
-.sales-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.sale-card {
-    background: white;
-    padding: 30px 28px;
-    border-radius: 24px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-    transition: all 0.4s ease;
-    border: 1px solid rgba(108, 77, 246, 0.04);
-}
-
-.sale-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(108, 77, 246, 0.10);
-    border-color: rgba(108, 77, 246, 0.10);
-}
-
-.discount {
-    color: #6c4df6;
-    font-weight: 700;
-    font-size: 28px;
-    letter-spacing: -0.5px;
-    display: inline-block;
-    background: rgba(108, 77, 246, 0.06);
-    padding: 4px 14px;
-    border-radius: 12px;
-}
-
-.sale-card h3 {
-    margin: 16px 0 8px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #1a1a2e;
-}
-
-.sale-card p {
-    color: #7a7a9a;
-    font-size: 15px;
-}
-
-.sale-card button {
-    margin-top: 22px;
-    width: 100%;
-    padding: 14px;
-    border: 0;
-    background: linear-gradient(135deg, #6c4df6, #7c5cfc);
-    color: white;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(108, 77, 246, 0.2);
-}
-
-.sale-card button:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(108, 77, 246, 0.3);
-}
-
-@media (max-width: 800px) {
-    nav {
-        display: none;
-=======
+@media (max-width: 500px) {
     body {
         padding: 18px;
->>>>>>> index
     }
-    
-    header {
-        height: 70px;
-        padding: 0 5%;
-    }
-    
-    .hero {
-        flex-direction: column;
-        gap: 40px;
-        padding: 50px 5%;
-        min-height: auto;
-    }
-    
-    .hero::before {
-        display: none;
-    }
-    
-    h1 {
-        font-size: 42px;
-        letter-spacing: -1px;
-    }
-    
-    .hero-text > p {
-        font-size: 17px;
-    }
-    
-    .hero-card {
-        width: 100%;
-<<<<<<< HEAD
-        max-width: 380px;
-        height: auto;
-        min-height: 300px;
-        padding: 30px;
-    }
-    
-    .hero-card h2 {
-        margin-top: 40px;
-        font-size: 30px;
-    }
-    
-    .sales-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .section {
-        padding: 50px 5%;
-    }
-    
-    .section h2 {
-        font-size: 28px;
-    }
-    
-    .buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .primary,
-    .secondary {
-        text-align: center;
-=======
 
+    .box {
         padding: 38px 24px;
-
         border-radius: 20px;
     }
 
@@ -900,24 +268,5 @@ h1 span {
     select,
     button {
         height: 52px;
-    }
-}
-
-
-/* =========================================
-   Small Height Screens
-========================================= */
-
-@media (max-height: 650px) {
-
-    body {
-        align-items: flex-start;
-
-        padding-top: 25px;
-    }
-
-    .box {
-        margin-bottom: 20px;
->>>>>>> index
     }
 }

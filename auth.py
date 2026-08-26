@@ -5,8 +5,16 @@ from database import get_db
 from models import User
 from schemas import UserCreate, LoginRequest
 
-router = APIRouter(prefix="/api/auth", tags=["Authentication"])
 
+router = APIRouter(
+    prefix="/api/auth",
+    tags=["Authentication"]
+)
+
+
+# =========================================
+# REGISTER
+# =========================================
 
 @router.post("/register")
 def register(
@@ -28,6 +36,8 @@ def register(
         name=user.name,
         email=user.email,
         password=user.password,
+        phone=user.phone,
+        city=user.city,
         role=user.role
     )
 
@@ -41,10 +51,16 @@ def register(
             "id": new_user.id,
             "name": new_user.name,
             "email": new_user.email,
+            "phone": new_user.phone,
+            "city": new_user.city,
             "role": new_user.role
         }
     }
 
+
+# =========================================
+# LOGIN
+# =========================================
 
 @router.post("/login")
 def login(
@@ -69,6 +85,8 @@ def login(
             "id": user.id,
             "name": user.name,
             "email": user.email,
+            "phone": user.phone,
+            "city": user.city,
             "role": user.role
         }
     }
