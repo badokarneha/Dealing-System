@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+/* =========================================
+   SaleFinder - Dark Purple Login
+========================================= */
+
+>>>>>>> index
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +13,7 @@
 }
 
 body {
+<<<<<<< HEAD
     background: #faf9fe;
     color: #1a1a2e;
     line-height: 1.6;
@@ -13,8 +21,13 @@ body {
 
 header {
     height: 80px;
+=======
+    min-height: 100vh;
+
+>>>>>>> index
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: space-between;
     padding: 0 7%;
     background: rgba(255, 255, 255, 0.85);
@@ -55,6 +68,431 @@ nav a {
     font-size: 15px;
     transition: color 0.3s ease;
     position: relative;
+=======
+
+    padding: 30px;
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(124, 92, 255, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(109, 40, 217, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #08080d,
+            #0d0b14 50%,
+            #08080d
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   Animated Background Glow
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    top: -150px;
+    left: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(124, 92, 255, 0.14);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    animation: glowOne 10s ease-in-out infinite;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    right: -150px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(147, 51, 234, 0.13);
+
+    filter: blur(90px);
+
+    pointer-events: none;
+
+    animation: glowTwo 12s ease-in-out infinite;
+}
+
+
+/* =========================================
+   Login Card
+========================================= */
+
+.box {
+    width: 430px;
+
+    max-width: 100%;
+
+    padding: 45px 42px;
+
+    background: rgba(20, 18, 29, 0.94);
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 0 40px rgba(124, 92, 255, 0.06);
+
+    position: relative;
+
+    z-index: 1;
+
+    animation: cardEntry 0.7s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.box:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(139, 92, 246, 0.45);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.65),
+        0 0 45px rgba(124, 92, 255, 0.12);
+}
+
+
+/* =========================================
+   Purple Top Line
+========================================= */
+
+.box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 12%;
+    right: 12%;
+
+    height: 4px;
+
+    border-radius: 0 0 10px 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #a855f7,
+        #6d28d9
+    );
+}
+
+
+/* =========================================
+   Heading
+========================================= */
+
+.box h1 {
+    text-align: center;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 35px;
+
+    color: #ffffff;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.box:hover h1 {
+    color: #a78bfa;
+
+    transform: translateY(-1px);
+}
+
+
+.box h1::after {
+    content: "Find the best deals around you";
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+    color: #85818f;
+}
+
+
+/* =========================================
+   Inputs
+========================================= */
+
+input,
+select {
+    width: 100%;
+
+    height: 54px;
+
+    padding: 0 17px;
+
+    margin: 8px 0;
+
+    border: 1px solid #2d2938;
+
+    border-radius: 12px;
+
+    background: #111019;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+input::placeholder {
+    color: #77727f;
+}
+
+
+input:hover,
+select:hover {
+    border-color: #6845b5;
+
+    background: #15121f;
+}
+
+
+input:focus,
+select:focus {
+    border-color: #8b5cf6;
+
+    background: #15121f;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 0 4px rgba(139, 92, 246, 0.12),
+        0 8px 25px rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================================
+   Select
+========================================= */
+
+select {
+    cursor: pointer;
+
+    appearance: none;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #a78bfa 50%
+        ),
+        linear-gradient(
+            135deg,
+            #a78bfa 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 18px) 22px,
+        calc(100% - 13px) 22px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   Main Button
+========================================= */
+
+button {
+    width: 100%;
+
+    height: 54px;
+
+    margin-top: 15px;
+
+    padding: 0 18px;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    background: #7c3aed;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.20);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Purple Hover */
+
+button:hover {
+    background: #9333ea;
+
+    transform: translateY(-3px);
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 15px 35px rgba(147, 51, 234, 0.35);
+}
+
+
+/* Click */
+
+button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 7px 18px rgba(124, 58, 237, 0.25);
+}
+
+
+/* =========================================
+   Divider
+========================================= */
+
+hr {
+    border: none;
+
+    height: 1px;
+
+    background: #292532;
+
+    margin: 27px 0 17px;
+}
+
+
+/* =========================================
+   Login Button
+========================================= */
+
+hr + button {
+    background: transparent;
+
+    color: #a78bfa;
+
+    border: 1px solid #393247;
+
+    box-shadow: none;
+}
+
+
+hr + button:hover {
+    background: #7c3aed;
+
+    color: #ffffff;
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 12px 28px rgba(124, 58, 237, 0.30);
+}
+
+
+/* =========================================
+   Card Animation
+========================================= */
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+>>>>>>> index
 }
 
 nav a::after {
@@ -69,14 +507,57 @@ nav a::after {
     border-radius: 4px;
 }
 
+<<<<<<< HEAD
 nav a:hover {
     color: #6c4df6;
 }
+=======
+/* =========================================
+   Background Animations
+========================================= */
+
+@keyframes glowOne {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(60px, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+@keyframes glowTwo {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-50px, -35px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+>>>>>>> index
 
 nav a:hover::after {
     width: 100%;
 }
 
+<<<<<<< HEAD
 .login {
     text-decoration: none;
     background: linear-gradient(135deg, #6c4df6, #7c5cfc);
@@ -338,6 +819,10 @@ h1 span {
 @media (max-width: 800px) {
     nav {
         display: none;
+=======
+    body {
+        padding: 18px;
+>>>>>>> index
     }
     
     header {
@@ -367,6 +852,7 @@ h1 span {
     
     .hero-card {
         width: 100%;
+<<<<<<< HEAD
         max-width: 380px;
         height: auto;
         min-height: 300px;
@@ -399,5 +885,39 @@ h1 span {
     .primary,
     .secondary {
         text-align: center;
+=======
+
+        padding: 38px 24px;
+
+        border-radius: 20px;
+    }
+
+    .box h1 {
+        font-size: 29px;
+    }
+
+    input,
+    select,
+    button {
+        height: 52px;
+    }
+}
+
+
+/* =========================================
+   Small Height Screens
+========================================= */
+
+@media (max-height: 650px) {
+
+    body {
+        align-items: flex-start;
+
+        padding-top: 25px;
+    }
+
+    .box {
+        margin-bottom: 20px;
+>>>>>>> index
     }
 }

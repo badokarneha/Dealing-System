@@ -1,42 +1,427 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-    <title>Dashboard</title>
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet"
-          href="dashboard.css">
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SaleFinder | Dashboard</title>
+
+    <link
+            rel="stylesheet"
+            href="css/dashboard.css"
+    >
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+    >
 
 </head>
 
 <body>
 
-<main>
+<div class="app">
 
-    <h1>Shopkeeper Dashboard</h1>
+    <!-- SIDEBAR -->
 
-    <div class="stats">
+    <aside class="sidebar">
 
-        <div>
-            <h2 id="total">0</h2>
-            <p>Total Sales</p>
+        <a href="index.html" class="logo">
+
+            <span class="logo-box">S</span>
+
+            <span>
+                Sale<span class="purple">Finder</span>
+            </span>
+
+        </a>
+
+
+        <p class="menu-label">
+            MAIN MENU
+        </p>
+
+
+        <nav class="navigation">
+
+            <a
+                    href="dashboard.html"
+                    class="nav-item active"
+            >
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+
+            <a
+                    href="post-sale.html"
+                    class="nav-item"
+            >
+                <span>＋</span>
+                Post a Sale
+            </a>
+
+
+            <a
+                    href="explore.html"
+                    class="nav-item"
+            >
+                <span>⌕</span>
+                Explore Sales
+            </a>
+
+
+            <a
+                    href="profile.html"
+                    class="nav-item"
+            >
+                <span>♙</span>
+                My Profile
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="profile.html">
+                ⚙️ Settings
+            </a>
+
+            <button onclick="logout()">
+                ↪ Logout
+            </button>
+
         </div>
 
-        <div>
-            <h2>🔥</h2>
-            <p>Active Offers</p>
-        </div>
+    </aside>
 
-    </div>
 
-    <h2>Your Posted Sales</h2>
+    <!-- MAIN -->
 
-    <div id="sales"></div>
+    <main class="main">
 
-</main>
+        <!-- TOP BAR -->
 
-<script src="dashboard.js"></script>
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                SaleFinder
+            </div>
+
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search your sales..."
+                >
+
+            </div>
+
+
+            <div class="user-area">
+
+                <button class="notification">
+                    🔔
+                    <i></i>
+                </button>
+
+
+                <a
+                        href="profile.html"
+                        class="user"
+                >
+
+                    <div class="avatar">
+                        👤
+                    </div>
+
+                    <div class="user-text">
+
+                        <strong id="userName">
+                            Shopkeeper
+                        </strong>
+
+                        <small>
+                            Shop Owner
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="eyebrow">
+                    SHOPKEEPER DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome back,
+                    <span id="welcomeName">
+                        Shopkeeper
+                    </span>
+                    👋
+                </h1>
+
+                <p>
+                    Manage your offers and reach more
+                    customers around you.
+                </p>
+
+            </div>
+
+
+            <a
+                    href="post-sale.html"
+                    class="primary-btn"
+            >
+
+                <span>＋</span>
+
+                Post New Sale
+
+            </a>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section class="stats-grid">
+
+            <div class="stat">
+
+                <div class="stat-icon purple-bg">
+                    🏷️
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Sales
+                    </span>
+
+                    <h2 id="totalSales">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-icon green-bg">
+                    🔥
+                </div>
+
+                <div>
+
+                    <span>
+                        Active Offers
+                    </span>
+
+                    <h2 id="activeSales">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-icon blue-bg">
+                    👁️
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Views
+                    </span>
+
+                    <h2>
+                        1,284
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-icon orange-bg">
+                    ❤️
+                </div>
+
+                <div>
+
+                    <span>
+                        Saved Offers
+                    </span>
+
+                    <h2>
+                        326
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- SALES -->
+
+            <div class="sales-area">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>
+                            Your Sales
+                        </h2>
+
+                        <p>
+                            Recently posted offers
+                        </p>
+
+                    </div>
+
+
+                    <a href="explore.html">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div
+                        id="salesContainer"
+                        class="sales-grid"
+                >
+
+                    <div class="loading">
+                        Loading sales...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIDE -->
+
+            <aside class="side-content">
+
+
+                <!-- QUICK ACTION -->
+
+                <div class="glass-card">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                    <a href="post-sale.html">
+                        <span>＋</span>
+                        Create Sale
+                    </a>
+
+                    <a href="explore.html">
+                        <span>⌕</span>
+                        Explore Offers
+                    </a>
+
+                    <a href="profile.html">
+                        <span>⚙</span>
+                        Manage Profile
+                    </a>
+
+                </div>
+
+
+                <!-- PERFORMANCE -->
+
+                <div class="glass-card performance">
+
+                    <div class="performance-head">
+
+                        <div>
+
+                            <h3>
+                                Performance
+                            </h3>
+
+                            <small>
+                                This month
+                            </small>
+
+                        </div>
+
+                        <span>
+                            +24.8%
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div style="height:35%"></div>
+                        <div style="height:55%"></div>
+                        <div style="height:42%"></div>
+                        <div style="height:70%"></div>
+                        <div style="height:58%"></div>
+                        <div style="height:80%"></div>
+                        <div style="height:68%"></div>
+                        <div style="height:90%"></div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
