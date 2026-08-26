@@ -12,93 +12,409 @@
 
 <body>
 
-<header>
+    <!-- ================= HEADER ================= -->
 
-    <div class="logo">
-        Sale<span>Finder</span>
-    </div>
+    <header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Explore</a>
-        <a href="post sale.html">Post Sale</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="profile.html">Profile</a>
-        <a href="sale-details.html">Sales details</a>
-    </nav>; 
+        <!-- Logo -->
+        <div class="logo">
+            Sale<span>Finder</span>
+        </div>
 
-    <a class="login" href="login.html">
-        Login
-    </a>
+        <!-- Navigation -->
+        <nav class="main-nav">
 
-</header>
-
-
-<section class="hero">
-
-    <div class="hero-text">
-
-        <p class="tag">DISCOVER • SAVE • SHOP</p>
-
-        <h1>
-            Never miss a
-            <span>sale</span>
-            again.
-        </h1>
-
-        <p>
-            Discover amazing offers, discounts and
-            special deals from shops around you.
-        </p>
-
-        <div class="buttons">
-
-            <a href="shop.html" class="primary">
-                Explore Sales
+            <a href="index.html" class="nav-link active">
+                Home
             </a>
 
-            <a href="post sale.html" class="secondary">
-                Post Your Sale
+            <a href="shop.html" class="nav-link">
+                Explore
             </a>
+
+            <a href="post-sale.html" class="nav-link">
+                Post Sale
+            </a>
+
+            <a href="dashboard.html" class="nav-link">
+                Dashboard
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                Profile
+            </a>
+
+            <a href="sale-details.html" class="nav-link">
+                Sales Details
+            </a>
+
+        </nav>
+
+        <!-- Login -->
+        <a class="login" href="login.html">
+            Login
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <p class="tag">
+                DISCOVER • SAVE • SHOP
+            </p>
+
+            <h1>
+                Never miss a
+                <span>sale</span>
+                again.
+            </h1>
+
+            <p>
+                Discover amazing offers, discounts and
+                special deals from shops around you.
+            </p>
+
+            <div class="buttons">
+
+                <a href="shop.html" class="primary">
+                    Explore Sales →
+                </a>
+
+                <a href="post-sale.html" class="secondary">
+                    Post Your Sale
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
 
+        <!-- Hero Sale Card -->
 
-    <div class="hero-card">
+        <div class="hero-card">
 
-        <div class="sale-badge">
-            50% OFF
+            <div class="sale-badge">
+                50% OFF
+            </div>
+
+            <h2>
+                Fashion Fest
+            </h2>
+
+            <p>
+                Trendy Fashion Store
+            </p>
+
+            <div class="offer">
+                Limited Time Offer
+            </div>
+
         </div>
+
+    </section>
+
+
+    <!-- ================= TRENDING SALES ================= -->
+
+    <section class="section" id="trending">
 
         <h2>
-            Fashion Fest
+            Trending Sales <span>🔥</span>
         </h2>
 
-        <p>
-            Trendy Fashion Store
-        </p>
+        <!-- Sales loaded from API -->
+        <div id="salesContainer" class="sales-grid">
 
-        <div class="offer">
-            Limited Time Offer
+            <!-- JavaScript will add sales here -->
+
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<section class="section">
+    <!-- ================= EXPLORE SECTION ================= -->
 
-    <h2>Trending Sales 🔥</h2>
+    <section class="explore-section" id="explore">
 
-    <div id="salesContainer" class="sales-grid"></div>
+        <div class="explore-content">
 
-</section>
+            <p class="tag">
+                EXPLORE MORE
+            </p>
+
+            <h2>
+                Find the best
+                <span>sales near you.</span>
+            </h2>
+
+            <p>
+                Discover discounts, offers and special deals
+                from stores around you. Find the perfect deal
+                before it disappears.
+            </p>
+
+            <a href="shop.html" class="primary">
+                Explore All Sales →
+            </a>
+
+        </div>
+
+    </section>
 
 
-<script src="index.js"></script>
+    <!-- ================= QUICK ACCESS ================= -->
+
+    <section class="quick-section">
+
+        <h2>
+            Everything You Need
+        </h2>
+
+        <div class="quick-grid">
+
+            <!-- Explore -->
+
+            <a href="shop.html" class="quick-card">
+
+                <div class="quick-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Explore Sales
+                </h3>
+
+                <p>
+                    Find the latest discounts and
+                    offers available near you.
+                </p>
+
+            </a>
+
+
+            <!-- Post Sale -->
+
+            <a href="post-sale.html" class="quick-card">
+
+                <div class="quick-icon">
+                    🏷️
+                </div>
+
+                <h3>
+                    Post Your Sale
+                </h3>
+
+                <p>
+                    Have an offer? Publish your sale
+                    and reach more customers.
+                </p>
+
+            </a>
+
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html" class="quick-card">
+
+                <div class="quick-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Dashboard
+                </h3>
+
+                <p>
+                    Manage your sales and keep track
+                    of your activity.
+                </p>
+
+            </a>
+
+
+            <!-- Profile -->
+
+            <a href="profile.html" class="quick-card">
+
+                <div class="quick-icon">
+                    👤
+                </div>
+
+                <h3>
+                    Profile
+                </h3>
+
+                <p>
+                    Manage your account and personal
+                    information.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Sale<span>Finder</span>
+        </div>
+
+        <p>
+            Discover • Save • Shop
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Explore
+            </a>
+
+            <a href="post-sale.html">
+                Post Sale
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 SaleFinder. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="index.js"></script>
+
+
+    <!-- Navigation Active Page Script -->
+
+    <script>
+
+        const currentPage =
+            window.location.pathname.split("/").pop();
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+
+        navLinks.forEach(link => {
+
+            const linkPage =
+                link.getAttribute("href");
+
+            if (
+                linkPage === currentPage ||
+                (
+                    currentPage === "" &&
+                    linkPage === "index.html"
+                )
+            ) {
+
+                link.classList.add("active");
+
+            } else {
+
+                link.classList.remove("active");
+
+            }
+
+        });
+
+
+        /* Page transition */
+
+        document
+            .querySelectorAll(".nav-link")
+            .forEach(link => {
+
+                link.addEventListener("click", function(event) {
+
+                    const url = this.href;
+
+                    if (
+                        !url ||
+                        url.includes("#")
+                    ) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    document.body.classList.add("page-exit");
+
+                    setTimeout(() => {
+
+                        window.location.href = url;
+
+                    }, 250);
+
+                });
+
+            });
+
+
+        /* Scroll reveal */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".section, .explore-section, .quick-section"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "show"
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+    </script>
 
 </body>
+
 </html>
