@@ -6,35 +6,43 @@
     <meta charset="UTF-8">
 
     <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
     >
 
     <title>SaleFinder | Dashboard</title>
 
+    <!-- DASHBOARD CSS -->
     <link
-            rel="stylesheet"
-            href="css/dashboard.css"
+        rel="stylesheet"
+        href="dashboard.css"
     >
 
+    <!-- INTER FONT -->
     <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
     >
 
 </head>
+
 
 <body>
 
 <div class="app">
 
-    <!-- SIDEBAR -->
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
     <aside class="sidebar">
 
         <a href="index.html" class="logo">
 
-            <span class="logo-box">S</span>
+            <span class="logo-box">
+                S
+            </span>
 
             <span>
                 Sale<span class="purple">Finder</span>
@@ -51,8 +59,8 @@
         <nav class="navigation">
 
             <a
-                    href="dashboard.html"
-                    class="nav-item active"
+                href="dashboard.html"
+                class="nav-item active"
             >
                 <span>⌂</span>
                 Dashboard
@@ -60,8 +68,8 @@
 
 
             <a
-                    href="post-sale.html"
-                    class="nav-item"
+                href="post-sale.html"
+                class="nav-item"
             >
                 <span>＋</span>
                 Post a Sale
@@ -69,8 +77,8 @@
 
 
             <a
-                    href="explore.html"
-                    class="nav-item"
+                href="explore.html"
+                class="nav-item"
             >
                 <span>⌕</span>
                 Explore Sales
@@ -78,8 +86,8 @@
 
 
             <a
-                    href="profile.html"
-                    class="nav-item"
+                href="profile.html"
+                class="nav-item"
             >
                 <span>♙</span>
                 My Profile
@@ -103,16 +111,20 @@
     </aside>
 
 
-    <!-- MAIN -->
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <main class="main">
+
 
         <!-- TOP BAR -->
 
         <header class="topbar">
 
             <div class="mobile-logo">
-                SaleFinder
+                Sale<span class="purple">Finder</span>
             </div>
 
 
@@ -121,9 +133,9 @@
                 <span>⌕</span>
 
                 <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Search your sales..."
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search your sales..."
                 >
 
             </div>
@@ -131,20 +143,24 @@
 
             <div class="user-area">
 
-                <button class="notification">
+                <button
+                    class="notification"
+                    type="button"
+                >
                     🔔
                     <i></i>
                 </button>
 
 
                 <a
-                        href="profile.html"
-                        class="user"
+                    href="profile.html"
+                    class="user"
                 >
 
                     <div class="avatar">
                         👤
                     </div>
+
 
                     <div class="user-text">
 
@@ -165,7 +181,10 @@
         </header>
 
 
-        <!-- WELCOME -->
+
+        <!-- =========================
+             WELCOME
+        ========================== -->
 
         <section class="welcome">
 
@@ -175,13 +194,19 @@
                     SHOPKEEPER DASHBOARD
                 </p>
 
+
                 <h1>
+
                     Welcome back,
+
                     <span id="welcomeName">
                         Shopkeeper
                     </span>
+
                     👋
+
                 </h1>
+
 
                 <p>
                     Manage your offers and reach more
@@ -192,8 +217,8 @@
 
 
             <a
-                    href="post-sale.html"
-                    class="primary-btn"
+                href="post-sale.html"
+                class="primary-btn"
             >
 
                 <span>＋</span>
@@ -205,9 +230,15 @@
         </section>
 
 
-        <!-- STATS -->
+
+        <!-- =========================
+             STATS
+        ========================== -->
 
         <section class="stats-grid">
+
+
+            <!-- TOTAL SALES -->
 
             <div class="stat">
 
@@ -230,6 +261,9 @@
             </div>
 
 
+
+            <!-- ACTIVE OFFERS -->
+
             <div class="stat">
 
                 <div class="stat-icon green-bg">
@@ -251,6 +285,9 @@
             </div>
 
 
+
+            <!-- TOTAL VIEWS -->
+
             <div class="stat">
 
                 <div class="stat-icon blue-bg">
@@ -271,6 +308,9 @@
 
             </div>
 
+
+
+            <!-- SAVED OFFERS -->
 
             <div class="stat">
 
@@ -295,12 +335,15 @@
         </section>
 
 
-        <!-- CONTENT -->
+
+        <!-- =========================
+             DASHBOARD CONTENT
+        ========================== -->
 
         <section class="dashboard-grid">
 
 
-            <!-- SALES -->
+            <!-- SALES AREA -->
 
             <div class="sales-area">
 
@@ -327,8 +370,8 @@
 
 
                 <div
-                        id="salesContainer"
-                        class="sales-grid"
+                    id="salesContainer"
+                    class="sales-grid"
                 >
 
                     <div class="loading">
@@ -340,12 +383,15 @@
             </div>
 
 
-            <!-- SIDE -->
+
+            <!-- =========================
+                 RIGHT SIDEBAR
+            ========================== -->
 
             <aside class="side-content">
 
 
-                <!-- QUICK ACTION -->
+                <!-- QUICK ACTIONS -->
 
                 <div class="glass-card">
 
@@ -353,22 +399,35 @@
                         Quick Actions
                     </h3>
 
+
                     <a href="post-sale.html">
+
                         <span>＋</span>
+
                         Create Sale
+
                     </a>
+
 
                     <a href="explore.html">
+
                         <span>⌕</span>
+
                         Explore Offers
+
                     </a>
 
+
                     <a href="profile.html">
+
                         <span>⚙</span>
+
                         Manage Profile
+
                     </a>
 
                 </div>
+
 
 
                 <!-- PERFORMANCE -->
@@ -389,6 +448,7 @@
 
                         </div>
 
+
                         <span>
                             +24.8%
                         </span>
@@ -399,17 +459,25 @@
                     <div class="chart">
 
                         <div style="height:35%"></div>
+
                         <div style="height:55%"></div>
+
                         <div style="height:42%"></div>
+
                         <div style="height:70%"></div>
+
                         <div style="height:58%"></div>
+
                         <div style="height:80%"></div>
+
                         <div style="height:68%"></div>
+
                         <div style="height:90%"></div>
 
                     </div>
 
                 </div>
+
 
             </aside>
 
@@ -420,7 +488,12 @@
 </div>
 
 
-<script src="js/dashboard.js"></script>
+
+<!-- =========================
+     DASHBOARD JAVASCRIPT
+========================== -->
+
+<script src="dashboard.js"></script>
 
 </body>
 
